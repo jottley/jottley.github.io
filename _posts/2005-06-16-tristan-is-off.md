@@ -1,0 +1,9 @@
+---
+title: Tristan is off
+author: jared
+layout: post
+permalink: /general/tristan-is-off
+categories:
+  - General
+---
+Yesterday, we went with my Mother and Brother in-laws to the MTC. I didn&#8217;t get to see much of what happened in the orientation because Andrew and Cameron couldn&#8217;t sit still. So we went outside and sat on the grass until it was over. Andrew, being Andrew, had non stop questions about everything. Where is that bus going? What is that car doing? What are those people doing? Where are they going? What kind of tree is this? What are the roots for? How does it eat? I, early on in my fatherhood, decided to always give the most correct answer to any questions my kids asked. I wouldn&#8217;t dumb down the answers and tell them, &#8220;just because&#8221;. I would also tell them when I did not know the answer, and I would try to find out the answer for them or help them search for the answer. I would also try to let them know when something was my opinion. I would never talk to them like babies, or like some people talk to their children&#8230;I just find that condescending. Needless to say, I spend a lot of time talking. And sometimes it doesn&#8217;t appear that they are paying attention, but I have found that they have amazing retention, and incredible vocabularies for children ages 4 and under. Last night, Taylor was talking about something, and he used the word replica in a sentence (The pronunciation was a bit off, but we knew what he was trying to say). And he used the word correctly. It is one thing to hear a word and be able to say the word. It is another thing, to be able to use the word correctly. I have always believed that to be able to use a word, you must be able to explain what the world means. Hopefully, I can instill that in my kids.

@@ -1,0 +1,66 @@
+title:            I exist as I am
+tagline:          Do not go where the path may lead, go instead where there is no path and leave a trail. --Ralph Waldo Emerson
+description:      Something Something Something
+# Your site's domain goes here. Leave localhost server or blank when working locally.
+url:              http://jared.ottleys.net
+
+# Owner/author information
+owner:
+  name:           Jared Ottley
+  avatar:         photo.JPG
+  bio:            "Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini."
+  email:          jared@ottleys.net
+  # Social networking links are used in author-bio sidebar. Update and remove as you like.
+  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
+  twitter:        jottley
+  facebook:       jottley
+  github:         jottley
+  linkedin:       jottley
+  instagram:      
+  lastfm:         
+  flickr:         jottley
+  tumblr:         
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    https://plus.google.com/u/0/116380333940951424604/posts
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   UA-73397-1
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:        
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Articles
+    url: /articles/
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Denver
+future:      true
+pygments:    true
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

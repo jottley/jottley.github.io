@@ -1,0 +1,341 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Alfresco: Default Quota Policy &#8211; I exist as I am</title>
+<meta name="description" content="">
+<meta name="keywords" content="Alfresco, AMP, behavior, Extension">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Alfresco: Default Quota Policy">
+<meta name="twitter:description" content="Something Something Something">
+<meta name="twitter:creator" content="@jottley">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alfresco: Default Quota Policy">
+<meta property="og:description" content="Something Something Something">
+<meta property="og:url" content="/alfresco/alfresco-default-quota-policy">
+<meta property="og:site_name" content="I exist as I am">
+
+
+
+
+
+<link rel="canonical" href="/alfresco/alfresco-default-quota-policy">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="I exist as I am Feed">
+<link rel="author" href="https://plus.google.com/u/0/116380333940951424604/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+
+<script src="/assets/js/modernizr.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div id="outer-wrap">
+<div id="inner-wrap">
+
+    <header id="top" role="banner">
+        <div class="block">
+            <h1 class="block-title">I exist as I am</h1>
+            <a class="nav-btn" id="nav-open-btn" href="#nav">Navigation</a>
+        </div>
+    </header>
+
+    <nav id="nav" role="navigation">
+        <div class="block">
+            <h2 class="block-title">Chapters</h2>
+            <ul>
+                
+				<li><a href="/" >Home</a></li>
+		        
+				<li><a href="/about/" >About</a></li>
+		        
+				<li><a href="/articles/" >Articles</a></li>
+		        
+		        <li><a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+            </ul>
+            <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+        </div>
+    </nav>
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-side">
+    <img src="/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+<h3>Jared Ottley</h3>
+<p>Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini.</p>
+<a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
+<a href="http://twitter.com/jottley" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://facebook.com/jottley" class="author-social" target="_blank"><i class="icon-facebook"></i> Facebook</a>
+<a href="https://plus.google.com/u/0/116380333940951424604/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/jottley" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/jottley" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+<a href="http://www.flickr.com/photos/jottley" class="author-social" target="_blank"><i class="icon-flickr"></i> Flickr</a>
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Alfresco: Default Quota Policy</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <p><em>Updated: Added new tested versions</em></p>
+
+<p>For this post I want to share another policy from recent request from a customer.  The project was to help them develop a way to have usage quotas set to a default value when a new user/person was added to Alfresco. (There is an important distinction between the two.)  A few months ago I had a discussion about possible ways to implement this kind of functionality with a co-worker and had a few ideas brewing as we started the engagement.</p>
+
+<p>First some background on quotas:</p>
+
+<ul>
+  <li>The default quota in Alfresco is unlimited.  In other words, there is no limit in the amount (total size) of content a user can add/own in Alfresco.</li>
+  <li>A quota can be set either on creation or at anytime during a users lifetime. 
+    <ul>
+      <li>From within the UI a quota can be in either GB, MB or KB.</li>
+      <li>From an API  (Web Script, JavaScript, Java) it accepts the size in bytes.</li>
+    </ul>
+  </li>
+  <li>See <a href="http://wiki.alfresco.com/wiki/Usages_and_Quotas">http://wiki.alfresco.com/wiki/Usages_and_Quotas</a> for additional details</li>
+</ul>
+
+<p>When developing a behavior I continually reference <a href="http://ecmarchitect.com/">Jeff Potts’s</a> tutorial on <a href="http://ecmarchitect.com/archives/2007/09/26/770">implementing behaviors</a>. His table of available policies is a great quick reference.  Of course the definitive source is the Alfresco source code, but not much has changed since Jeff wrote the article.</p>
+
+<p><strong>JavaScript Behavior</strong></p>
+
+<p>The first attempt to implementing this policy was to use a behavior implemented in JavaScript.  I used Jeff’s JavaScript example as the seed for my code.  In fact there was very little I needed to change (mostly just the business logic). It is a great outline to get you going.</p>
+
+<p>Using JavaScript wasn’t completely successful.  The code did work up to a point and that point was setting the quota.  There is an undocumented (in the wiki) JS function that can be used to set quotas.</p>
+
+<p>From the People class (note the comment):</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">/**
+ * Set the content quota in bytes for a person.
+ * Only the admin authority can set this value.
+ *
+ * @param person    Person to set quota against.
+ * @param quota     As a string, in bytes, a value of "-1" means no quota is set
+*/
+public void setQuota(ScriptNode person, String quota)</pre>
+
+<p>During the transaction the quota was being set, but once the transaction was committed it was lost. The problem being (again see the comments) that the setQuota must be executed by an admin.  A quota must be set explicitly by an admin.</p>
+
+<p>The JavaScript API lacks the ability to execute a script as one user but then run specific code in that script as another user.  This is done for <a href="http://forums.alfresco.com/en/viewtopic.php?f=6&amp;t=28475&amp;start=0">security reasons</a> (like being able to keep a user from uploading and then executing a malicious script).</p>
+
+<p>While the script did not work as desired it still may be useful for something else.  So I’m including links to the <a href="http://svn.ottleys.net/alfresco/misc_scripts/js_behavior/behaviour-context.xml">context file</a> and <a href="http://svn.ottleys.net/alfresco/misc_scripts/js_behavior/behaviour.js">script</a> as part of this post.</p>
+
+<p><strong>Java Behavior</strong></p>
+
+<p>Because we need to  set the quota as an admin user, we’ll switch to Java which provides a useful means to run code as one user, and execute specific parts as a different user.</p>
+
+<p>Before we jump to that, let’s talk about some of the specifics of our policy:</p>
+
+<p>First, there is not much difference in the structure needed for this behavior and the <a href="http://code.google.com/p/alfresco-maxversion-policy/">Max Version Policy</a> I wrote about in a <a href="http://jared.ottleys.net/alfresco/alfresco-max-version-policy">previous post</a>.  So I used it as a template for this project.</p>
+
+<p>Next, users/people in Alfresco are stored as nodes.  If you start to dig into <a href="http://www.alfresco.com/help/webclient/tasks/tuh-admin-nodebrowser.html">the node browser</a> you may be drawn to find your users in the user://alfrecoUserStore store.  This is, as the name suggestions, the Alfresco User Store which is used as the native Alfresco authentication source (<a href="http://wiki.alfresco.com/wiki/Authentication_Subsystems#AlfrescoNtlm">alfrescoNTLM</a>).  The nodes in this store are of type {http://www.alfresco.org/model/user/1.0}user.  Quotas are a property of {http://www.alfresco.org/model/content/1.0}person and are found in the workspace://SpacesStore under system -&gt; people.</p>
+
+<p>Alfresco has no specific policies for user nodes (like an onCreateUser policy), but since they are just nodes we can leverage the onCreateNode policy. Also because they are just nodes, when using an onCreateNode policy we don’t want the policy to be run every time a node is created.  We want to target cm:person nodes.  Otherwise, we would need to overcomplicate the code with additional tests to only only execute the business logic when the newly created node is of type cm:person.  So we can bind our policy to a specific type.  Similarly to the max version policy we initialize our behavior and bind it in the init method.</p>
+
+<pre class="brush: java; title: ; notranslate" title="">public void init() {
+
+this.onCreateNode = new JavaBehaviour(this, "onCreateNode", NotificationFrequency.TRANSACTION_COMMIT);
+
+this.policyComponent.bindClassBehaviour(QName.createQName(NamespaceService.ALFRESCO_URI, "onCreateNode"), ContentModel.TYPE_PERSON, this.onCreateNode);
+
+}</pre>
+
+<p>In the init() above we bind our policy: QName.createQName(NamespaceService.ALFRESCO_URI, “onCreateNode”), the type: ContentModel.TYPE_PERSON and the behavior: this.onCreateNode together.</p>
+
+<p>Next we need to implement the onCreateNode method from the OnCreateNodePolicy in our new class</p>
+
+<pre class="brush: java; title: ; notranslate" title="">public void onCreateNode(ChildAssociationRef childAssocRef) {</pre>
+
+<p>We can grab our reference to the newly created user node from the ChildAssociationRef parameter.</p>
+
+<pre class="brush: java; title: ; notranslate" title="">final NodeRef user = childAssocRef.getChildRef();</pre>
+
+<p>Notice that it is using the final modifier.  Variables from an outer class that are being referenced in an inner class must be defined as final.</p>
+
+<p>For our default policy we also want to allow the default quota to be overwritten.  If an admin wants to set a different value for the quota at creation time we need to allow it. So we need to first get the value that was assigned to the user on the node at creation</p>
+
+<pre class="brush: java; title: ; notranslate" title="">long currentQuota = contentUsageService.getUserQuota((String) nodeService.getProperty(user,ContentModel.PROP_USERNAME));</pre>
+
+<p>The default value of no quota is -1.  If an admin has set a value for the quota it will be greater than 0.</p>
+
+<pre class="brush: java; title: ; notranslate" title="">if (currentQuota &lt; 0) {
+
+...business logic here...
+
+}</pre>
+
+<p>Because quotas can only be set by an admin we need to use the runAs utility</p>
+
+<pre class="brush: java; title: ; notranslate" title="">AuthenticationUtil.runAs(
+
+new AuthenticationUtil.RunAsWork&lt;Object&gt;() {
+
+public Object doWork() throws Exception {
+
+...code to be run as a different user...
+
+}
+
+}, "admin");</pre>
+
+<p>runAs takes two parameters: The first is the RunAsWork Object, which contains an inner class that has the code that needs to be run as another user.  Second the name of the user to execute the code as.</p>
+
+<p>Now in our policy we can set the quota.  We’ll use the contentUsageService to set the new users quota, taking the username and the value of the quota as parameters. Also note that default value is in bytes which is read from the spring context file for the OTB default I’ve chosen 2GB (2147483648).</p>
+
+<pre class="brush: java; title: ; notranslate" title="">contentUsageService.setUserQuota((String) nodeService.getProperty(user, ContentModel.PROP_USERNAME), Long.parseLong(defaultQuota));
+
+return user; </pre>
+
+<p>RunAsWork is also looking for a return value which I’ve set as user.  We won’t being doing anything with this value so in this case it is an arbitrary return.</p>
+
+<p><strong>Installing</strong></p>
+
+<p>The policy is <a href="http://code.google.com/p/alfresco-defaultquota-policy/downloads/detail?name=alfresco-defaultquota-policy.amp">packaged as an AMP</a> and is downloadable from the <a href="http://code.google.com/p/alfresco-defaultquota-policy/">alfresco-defaultquota-policy project</a> hosted on Google Code.  (See <a href="http://wiki.alfresco.com/wiki/Module_Management_Tool">http://wiki.alfresco.com/wiki/Module_Management_Tool</a> for detailed instructions on installing AMPs.)</p>
+
+<p>The amp has been tested with Alfresco Enterprise 3.1.1 to 3.3.2.</p>
+
+<p>I’ve only tested this on Enterprise 3.3.2.  I’ll look to expand my testing soon.  If you have a chance to try it on another version of Alfresco please let me know.  (In that case you’ll need to build the amp from source, changing the version.min/max property to include the version you’re targeting.)</p>
+
+<p><strong>So what next?</strong></p>
+
+<p>While this policy is limited to setting the user quota, your probably thinking what else can I use this for? I know I am!  Maybe your using a database or some other none supported user store in Alfresco and you want to populate the user node properties with details from that system.  Or you want to add them to specific groups based on some complex business logic.  Or interact with external systems when a user is created in Alfresco.  What are your ideas?</p>
+
+<p>I also believe that this should work with any external authentication/synchronization of users into Alfresco.  I’ve not tested it, but it is the list of things to test next.</p>
+
+<p>I’m always looking for feedback: let me know what worked or didn’t for you.</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+<h3>Jared Ottley</h3>
+<p>Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini.</p>
+<a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
+<a href="http://twitter.com/jottley" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://facebook.com/jottley" class="author-social" target="_blank"><i class="icon-facebook"></i> Facebook</a>
+<a href="https://plus.google.com/u/0/116380333940951424604/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/jottley" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/jottley" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+<a href="http://www.flickr.com/photos/jottley" class="author-social" target="_blank"><i class="icon-flickr"></i> Flickr</a>
+
+        </div>
+        <p class="byline"><strong>Alfresco: Default Quota Policy</strong> was published on <time datetime="2010-09-15T00:00:00-06:00" itemprop="datePublished">September 15, 2010</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About Jared Ottley" itemprop="url">Jared Ottley</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/alfresco/alfresco-property-decorators-cont" title="Alfresco: Property Decorators &#8212; cont.">Alfresco: Property Decorators &#8212; cont.</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/alfresco/alfresco-simple-workflow-web-scripts" title="Alfresco: Simple Workflow Web Scripts">Alfresco: Simple Workflow Web Scripts</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/alfresco/alfresco-simple-workflow" title="Alfresco: Simple Workflow">Alfresco: Simple Workflow</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2014 Jared Ottley. The thoughts here are my own and are not my employers...so blame me.</span>
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-73397-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>
