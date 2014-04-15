@@ -3,6 +3,7 @@ layout: post
 title: 'Alfresco&#58; CMIS Browser Binding DELETE example'
 author: jared
 permalink: /alfresco/alfresco-cmis-browser-binding-delete
+comments: true
 categories:
   - Alfresco
 tags:

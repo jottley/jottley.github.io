@@ -13,7 +13,7 @@ tags:
   - Alfresco
 ---
 In my post on [Property Decorators][1] I pointed out that there was an [issue][2] adding a customer property decorator: you couldn&#8217;t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well [Mike Hatfield][3] has found a solution which is just awesome: [Map Merge][4].
-
+<br /><br />
 It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the `applicationScriptUtils` bean. Add a single property of `decoratedProperties` and define a map in the property. When you define the map add the attribute `merge="true"`. Finally, add your custom property to decorator bean mappings. Done!
 
 Here is an example:

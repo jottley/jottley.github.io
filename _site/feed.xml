@@ -5,13 +5,78 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://jared.ottleys.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://jared.ottleys.net" />
-<updated>2014-03-05T20:32:13-07:00</updated>
+<updated>2014-04-14T20:35:03-06:00</updated>
 <id>http://jared.ottleys.net/</id>
 <author>
   <name>Jared Ottley</name>
   <uri>http://jared.ottleys.net/</uri>
   <email>jared@ottleys.net</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Alfresco&#58; CMIS Browser Binding DELETE example]]></title>
+  <link rel="alternate" type="text/html" href="http://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete" />
+  <id>http://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete</id>
+  <published>2014-04-14T00:00:00-06:00</published>
+  <updated>2014-04-14T00:00:00-06:00</updated>
+  <author>
+    <name>Jared Ottley</name>
+    <uri>http://jared.ottleys.net</uri>
+    <email>jared@ottleys.net</email>
+  </author>
+  <content type="html">&lt;p&gt;I’m in the midst of rewriting a CMIS client. We are moving from CMIS 1.0 atompub bindings to CMIS 1.1 browser bindings. I’ve worked out how to do a DELETE and wanted to document an example that others could extrapolate from.
+&lt;br /&gt;&lt;br /&gt;
+A browser binding DELETE should follow the model of a form POST according to the documentation. Playing around with the provided examples (there were no DELETE examples that I found doing a quick google search) I found it to be a simpler than a form POST. I should also note that these calls are governed by the &lt;a href=&quot;http://en.wikipedia.org/wiki/Same-origin_policy&quot; title=&quot;Same Origin Policy&quot;&gt;same origin policy&lt;/a&gt; so you’ll need to use either JSON-P&lt;a href=&quot;http://en.wikipedia.org/wiki/JSONP&quot; title=&quot;JSONP&quot;&gt;2&lt;/a&gt; or a CORS&lt;a href=&quot;http://en.wikipedia.org/wiki/Cross-origin_resource_sharing&quot; title=&quot;Cross-origin resource sharing&quot;&gt;3&lt;/a&gt; enabled server&lt;a href=&quot;http://www.slideshare.net/jottley/cors-enable-alfresco-for-cors&quot; title=&quot;CORS enable Alfresco&quot;&gt;4&lt;/a&gt; to enable building applications against the CMIS enabled repository.
+&lt;br /&gt;&lt;br /&gt;
+&lt;em&gt;I’m using curl for my examples.&lt;/em&gt;
+&lt;br /&gt;&lt;br /&gt;
+There are two ways to address the object that you want to delete: using the objectId or by path.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-objectid&quot;&gt;Using objectId&lt;/h3&gt;
+&lt;p&gt;To delete by objectId we need to include the ‘objectId=’ parameter along with cmis objectId (ex. 7ab93c6a-9520-40dd-be74-bae52f4bd6ca;1.0).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;objectId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;7ab93c6a-9520-40dd-be74-bae52f4bd6ca&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;by-path&quot;&gt;By Path&lt;/h3&gt;
+&lt;p&gt;To delete by path you need to include the full path in the URL. There is no need to include the objectId in the by path call as the path has precedence over the objectId&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;Sites/internal2/documentLibrary/test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now with the basics of addressing the document or folder under our belt we can pull together the rest of the call.
+&lt;br /&gt;&lt;br /&gt;
+With the atompub binding we made a delete using the HTTP DELETE method. With the browser binding a delete is made using the HTTP POST method. To indicate our call is a delete we add the ‘cmisaction=’ parameter with a value of delete to our call.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;cmisaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A full objectId call (made against Alfresco Cloud) would use a URL like the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root?cmisaction&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;objectId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;804f6300-38cd-48a4-86db-499f58497ae5&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The same call using a path:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root/Sites/internal2/documentLibrary/test.txt?cmisaction&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Using the objectId example from above a call using curl against the Alfresco Cloud Public API would look like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;curl -X POST &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root?cmisaction=delete&amp;amp;objectId=804f6300-38cd-48a4-86db-499f58497ae5;1.0&amp;quot;&lt;/span&gt; --header &lt;span class=&quot;s2&quot;&gt;&amp;quot;Authorization:Bearer 42b8c319-344c-4273-b94c-b4c23482be6b&amp;quot;&lt;/span&gt; -IL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(For those unfamiliar with curl I’ve added the -IL options to the command so that I can see details about the response (not including the body).&lt;/p&gt;
+
+&lt;h3 id=&quot;what-about-response-codes&quot;&gt;What about response codes?&lt;/h3&gt;
+&lt;p&gt;With atompub a successful delete would have resulted in a 204 response code and no response body. With the browser bindings a 200 response code is returned still with no body. (My preference would be that it returned a 204. This would keep consistency across the bindings and would match what I believe is proper DELETE response.)
+&lt;br /&gt;&lt;br /&gt;
+And response codes for Errors? You still see a 401 when a user needs to authenticate and a 404 if the object can’t be found. All other errors that I saw came back as 409s. This includes locked documents and folders containing children. If you receive a 409 result there are two json values you can look at to find the reason for the error: exception (the short description) and message (a fuller description of the error).&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete&quot;&gt;Alfresco&#58; CMIS Browser Binding DELETE example&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on April 14, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -25,9 +90,9 @@
     <uri>http://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
-  <content type="html">&lt;p&gt;In my post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-property-decorators&quot; title=&quot;Alfresco: Property Decorators&quot;&gt;Property Decorators&lt;/a&gt; I pointed out that there was an &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-13038&quot;&gt;issue&lt;/a&gt; adding a customer property decorator: you couldn’t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well &lt;a href=&quot;http://twitter.com/#!/mikehatfield&quot;&gt;Mike Hatfield&lt;/a&gt; has found a solution which is just awesome: &lt;a href=&quot;http://forum.springsource.org/showthread.php?53358-Simple-merge-of-util-map&quot;&gt;Map Merge&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the &lt;code&gt;applicationScriptUtils&lt;/code&gt; bean. Add a single property of &lt;code&gt;decoratedProperties&lt;/code&gt; and define a map in the property. When you define the map add the attribute &lt;code&gt;merge=&quot;true&quot;&lt;/code&gt;. Finally, add your custom property to decorator bean mappings. Done!&lt;/p&gt;
+  <content type="html">&lt;p&gt;In my post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-property-decorators&quot; title=&quot;Alfresco: Property Decorators&quot;&gt;Property Decorators&lt;/a&gt; I pointed out that there was an &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-13038&quot;&gt;issue&lt;/a&gt; adding a customer property decorator: you couldn’t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well &lt;a href=&quot;http://twitter.com/#!/mikehatfield&quot;&gt;Mike Hatfield&lt;/a&gt; has found a solution which is just awesome: &lt;a href=&quot;http://forum.springsource.org/showthread.php?53358-Simple-merge-of-util-map&quot;&gt;Map Merge&lt;/a&gt;.
+&lt;br /&gt;&lt;br /&gt;
+It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the &lt;code&gt;applicationScriptUtils&lt;/code&gt; bean. Add a single property of &lt;code&gt;decoratedProperties&lt;/code&gt; and define a map in the property. When you define the map add the attribute &lt;code&gt;merge=&quot;true&quot;&lt;/code&gt;. Finally, add your custom property to decorator bean mappings. Done!&lt;/p&gt;
 
 &lt;p&gt;Here is an example:&lt;/p&gt;
 
@@ -2214,129 +2279,6 @@ targetNamespace=&quot;http://www.alfresco.org/alfresco/sample&quot;&amp;gt; &lt;
 &lt;/p&gt;&lt;/p&gt;&lt;/xs:sequence&gt;&lt;/p&gt;&lt;/xs:complextype&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-wcm-forms-unique-identifier&quot;&gt;Alfresco WCM Forms: Unique Identifier&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 24, 2010.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Tunneling Debug and JMX for Alfresco]]></title>
-  <link rel="alternate" type="text/html" href="http://jared.ottleys.net/alfresco/tunneling-debug-and-jmx-for-alfresco" />
-  <id>http://jared.ottleys.net/alfresco/tunneling-debug-and-jmx-for-alfresco</id>
-  <published>2010-02-16T00:00:00-07:00</published>
-  <updated>2010-02-16T00:00:00-07:00</updated>
-  <author>
-    <name>Jared Ottley</name>
-    <uri>http://jared.ottleys.net</uri>
-    <email>jared@ottleys.net</email>
-  </author>
-  <content type="html">&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; As of 3.2 sp1 the custom-core-services-context.xml is no longer needed.  Check this [updated post][1] for more info.  You will also find supplementary instructions on using Windows there.&lt;/p&gt;
-
-&lt;p&gt;As we start to see more deployments of Alfresco in the cloud we are also seeing increased complexity in using features like JMX for managing Alfresco and troubleshooting Alfresco customizations with a Java debugger.  Below are two ways that you can use to enable both on cloud based installs of Alfresco.  These methods can also be used in instances where more security conscious admins have locked down ports, for example in a secured environment.  Also note these methods require an ssh client on your client machine and an ssh daemon on the server.  The instructions provided below assume you are using Linux on the server (which is likely to be the case for most cloud based installs); your client may run Windows, OS X or Linux.  Windows clients will require using ssh clients as provided by [cygwin][2] or [Putty][3], etc. Cygwin will allow you to use the following as described.  For putty, use this description of [tunneling with putty][4] along with the configuration instructions that follow.&lt;/p&gt;
-
-&lt;h2 id=&quot;ssh-tunneling-for-debugging&quot;&gt;SSH Tunneling for Debugging&lt;/h2&gt;
-
-&lt;p&gt;First configure Alfresco/Tomcat to listen for debug connections as per usual.  Add the following to your &lt;code&gt;alfresco.sh&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;export JAVA_OPTS=&quot;${JAVA_OPTS} -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8082&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;address&lt;/code&gt; parameter sets the port you want the debugger to listen on.  Adding this line, will require you to restart Alfresco/tomcat for it to become active.&lt;/p&gt;
-
-&lt;p&gt;Next, standard port forwarding with ssh should enable Java debugging:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ssh -i path/to/your.pem -f root@yourhost.com -L 2000:localhost:8082 -N&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;In this example we are using the following options:&lt;/p&gt;
-
-&lt;p style=&quot;padding-left: 30px&quot;&gt;
-  &lt;strong&gt;&lt;code&gt;-i path/to/your.pem&lt;/code&gt;&lt;/strong&gt; If you are using key-based authentication, like with EC2, use this option to point to your private key.  It is optional if you are not.
-&lt;/p&gt;
-
-&lt;p style=&quot;padding-left: 30px&quot;&gt;
-  &lt;strong&gt;&lt;code&gt;-f&lt;/code&gt; &lt;/strong&gt;Have the session move into the background after you connect.  Useful if you need to enter a password or passphrase
-&lt;/p&gt;
-
-&lt;p style=&quot;padding-left: 30px&quot;&gt;
-  &lt;strong&gt;&lt;code&gt;root@yourhost.com&lt;/code&gt;&lt;/strong&gt; The user and name of the server to connect to.  You do not need to use your root user account.
-&lt;/p&gt;
-
-&lt;p style=&quot;padding-left: 30px&quot;&gt;
-  &lt;strong&gt;&lt;code&gt;-L 2000:localhost:8082&lt;/code&gt;&lt;/strong&gt; The first number is the local port that you want to open to listen to connections on. Next is the hostname/IP/DNS name of the server to connect to on the other side of the tunnel and then finally the port to connect to at that address.
-&lt;/p&gt;
-
-&lt;p style=&quot;padding-left: 30px&quot;&gt;
-  &lt;strong&gt;&lt;code&gt;-N&lt;/code&gt;&lt;/strong&gt; tells ssh to not execute a command upon connection
-&lt;/p&gt;
-
-&lt;p&gt;Next we need to connect the debugger.  This example gives instructions for Eclipse.  Configure the debugger using the Remote Java Application option. Accept the default Connection Type: &lt;code&gt;Standard (Socket Attach)&lt;/code&gt;, but for the Connection Properties enter &lt;code&gt;localhost&lt;/code&gt; for the Host and the port number from the first parameter in the &lt;code&gt;-L&lt;/code&gt; switch for Port.  In our example port &lt;code&gt;2000&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div id=&quot;attachment_276&quot; style=&quot;width: 387px&quot; class=&quot;wp-caption aligncenter&quot;&gt;
-  &lt;img class=&quot;size-full wp-image-276 &quot; src=&quot;http://jared.ottleys.net/files/2010/02/dhnsnn76_21dt9jhkc7_b.png&quot; alt=&quot;Eclipse Debugger&quot; width=&quot;377&quot; height=&quot;170&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;
-    Eclipse Debugger
-  &lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Connect your debugger.&lt;/p&gt;
-
-&lt;h2 id=&quot;ssh-tunneling-for-jmx&quot;&gt;SSH Tunneling for JMX&lt;/h2&gt;
-
-&lt;p&gt;This configuration is a bit more complex due to how RMI works.&lt;/p&gt;
-
-&lt;p&gt;First, you will need to add the following line to your &lt;code&gt;alfresco.sh&lt;/code&gt; file (Restart required to turn in on):&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;export JAVA_OPTS=&quot;${JAVA_OPTS} -Dcom.sun.management.jmxremote=true -Djava.rmi.server.hostname=dummyhost&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You may already see the &lt;code&gt;-Dcom.sun.management.jmxremote&lt;/code&gt; line in the file, if so just add &lt;code&gt;=true&lt;/code&gt; to it.  This is important as I’ve had difficulty attaching with out this set to true (even though the default value of that option, with out declaring the value is true).&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;-Djava.rmi.server.hostname=dummyhost&lt;/code&gt; option is needed to help RMI know where to connect.  RMI connects in a two part process.  First by connecting to the RMI server registry, which pushes your request to the JMX service which is dynamically allocated on the first open port available to it at start up time. Dynamic ports don’t give us the consistence we need so we will want to configure Alfresco to use a static port. Also, this second connection requires us to use/set a hostname to connect, otherwise it will return an IP address, which in the case of EC2 is non-routable.&lt;/p&gt;
-
-&lt;p&gt;Let’s create a new context file under the &lt;code&gt;extension&lt;/code&gt; directory (&lt;code&gt;tomcat/shared/classes/alfresco/extension&lt;/code&gt;) and call it &lt;code&gt;custom-core-services-context.xml&lt;/code&gt;.  In that file we will add the following:&lt;/p&gt;
-
-&lt;p&gt;`&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;br /&gt;
-&amp;lt;!DOCTYPE beans PUBLIC ‘-//SPRING//DTD BEAN//EN’ ‘http://www.springframework.org/dtd/spring-beans.dtd’&amp;gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;beans&gt;
-&lt;p&gt;&lt;!-- MBeanServer Connector Override (registers itself with custom alfrescoMBeanServer) --&gt;&lt;br /&gt;
-&amp;lt;bean id=&quot;serverConnector&quot;&lt;br /&gt;
-depends-on=&quot;registry&quot;&lt;br /&gt;
-lazy-init=&quot;true&quot;&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;property name=&quot;server&quot; ref=&quot;alfrescoMBeanServer&quot; /&gt;&lt;br /&gt;
-&amp;lt;property name=&quot;objectName&quot;  value=&quot;connector:name=rmi&quot;/&amp;gt;&lt;br /&gt;
-&amp;lt;property name=&quot;serviceUrl&quot;  value=&quot;service:jmx:rmi://localhost:${jmx.port.number}/jndi/rmi://localhost:${alfresco.rmi.services.port}/alfresco/jmxrmi&quot; /&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;property name=&quot;environment&quot;&gt;&lt;br /&gt;
-&lt;map&gt;&lt;br /&gt;
-&lt;!-- The following keys are only valid when sun jmx is used --&gt;&lt;br /&gt;
-&lt;entry key=&quot;jmx.remote.x.password.file&quot; value=&quot;${alfresco.jmx.dir}/alfresco-jmxrmi.password&quot; /&gt;&lt;br /&gt;
-&amp;lt;entry key=&quot;jmx.remote.x.access.file&quot;   value=&quot;${alfresco.jmx.dir}/alfresco-jmxrmi.access&quot;/&amp;gt;&lt;br /&gt;
-&lt;/map&gt;&lt;br /&gt;
-&lt;/property&gt;&lt;br /&gt;
-&lt;/p&gt;
-&lt;p&gt;`
-
-The important value in here is `jmx.port.number`.  To set this value add `jmx.port.number=50508` to the `alfresco-global.properties` file (located in `tomcat/shared/classes`)
-
-Next you will want to add the hostname you entered above into your `/etc/hosts file`:
-
-`127.0.0.1    dummyhost`
-
-Remember we do this because during the second part of establishing an RMI connection, RMI returns the hostname we want to connect to.  In our case this is the local client that is forwarding the connection to the server machine that is running Alfresco.
-
-Now start Alfresco and let&amp;#8217;s configure ssh to forward the ports.  This requires two new tunnels:
-
-`ssh -i path/to/your.pem -f root@yourhost.com -L 2001:localhost:50500 -N`
-
-`ssh -i path/to/your.pem -f root@yourhost.com -L dummyhost:50508:localhost:50508 -N`
-
-The same explanations to these commands found in the debug section above apply here as well.  But notice one difference in the second tunnel.  The second tunnel is specifying the hostname to connect to: `dummyhost`.  Remember we are doing this because RMI will be returning the hostname as specified in our `alfresco.sh` file.  We need to tell the tunnel how to use that hostname.  Also, the port we want to have listening locally is the same as the port that will be listening remotely.
-
-Finally, when you connect your JMX console to Alfresco use the standard connection string but for the hostname use `localhost` and the port number, `2001`, specified in the first tunnel:
-
-`service:jmx:rmi:///jndi/rmi://localhost:2001/alfresco/jmxrmi`
-
- [1]: http://jared.ottleys.net/alfresco/updated-tunneling-debug-and-jmx-for-alfresco
- [2]: http://www.cygwin.com/
- [3]: http://www.chiark.greenend.org.uk/~sgtatham/putty/
- [4]: http://www.cs.uu.nl/technical/services/ssh/putty/puttyfw.html
-&lt;/p&gt;&lt;/beans&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://jared.ottleys.net/alfresco/tunneling-debug-and-jmx-for-alfresco&quot;&gt;Tunneling Debug and JMX for Alfresco&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 16, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>
