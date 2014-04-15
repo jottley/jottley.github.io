@@ -13,7 +13,7 @@ tags:
 ---
 I'm in the midst of rewriting a CMIS client. We are moving from CMIS 1.0 atompub bindings to CMIS 1.1 browser bindings. I've worked out how to do a DELETE and wanted to document an example that others could extrapolate from.
 <br /><br />
-A browser binding DELETE should follow the model of a form POST according to the documentation. Playing around with the provided examples (there were no DELETE examples that I found doing a quick google search) I found it to be a simpler than a form POST. I should also note that these calls are governed by the [same origin policy][1] so you'll need to use either JSON-P[2] or a CORS[3] enabled server[4] to enable building applications against the CMIS enabled repository.
+A browser binding DELETE should follow the model of a form POST according to the documentation. Playing around with the provided examples (there were no DELETE examples that I found doing a quick google search) I found it to be a simpler than a form POST. I should also note that these calls are governed by the [same origin policy][1] so you'll need to use either [JSON-P][2] or a [CORS][3] enabled [server][4] to enable building applications against the CMIS enabled repository.
 <br /><br />
 *I'm using curl for my examples.*
 <br /><br />
@@ -53,7 +53,7 @@ curl -X POST "https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/brow
 ### What about response codes?
 With atompub a successful delete would have resulted in a 204 response code and no response body. With the browser bindings a 200 response code is returned still with no body. (My preference would be that it returned a 204. This would keep consistency across the bindings and would match what I believe is proper DELETE response.)
 <br /><br />
-And response codes for Errors? You still see a 401 when a user needs to authenticate and a 404 if the object can't be found. All other errors that I saw came back as 409s. This includes locked documents and folders containing children. If you receive a 409 result there are two json values you can look at to find the reason for the error: exception (the short description) and message (a fuller description of the error).
+And response codes for Errors? You still see a 401 when a user needs to authenticate and a 404 if the object can't be found. All other errors that I saw came back as 409s. This includes locked documents and attempting to delete folders containing children. If you receive a 409 result there are two json values you can look at to find the reason for the error: exception (the short description) and message (a fuller description of the error).
 
 
 

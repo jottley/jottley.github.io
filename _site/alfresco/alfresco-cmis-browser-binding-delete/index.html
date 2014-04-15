@@ -124,7 +124,7 @@
     <div class="article-wrap" itemprop="text">
       <p>I’m in the midst of rewriting a CMIS client. We are moving from CMIS 1.0 atompub bindings to CMIS 1.1 browser bindings. I’ve worked out how to do a DELETE and wanted to document an example that others could extrapolate from.
 <br /><br />
-A browser binding DELETE should follow the model of a form POST according to the documentation. Playing around with the provided examples (there were no DELETE examples that I found doing a quick google search) I found it to be a simpler than a form POST. I should also note that these calls are governed by the <a href="http://en.wikipedia.org/wiki/Same-origin_policy" title="Same Origin Policy">same origin policy</a> so you’ll need to use either JSON-P<a href="http://en.wikipedia.org/wiki/JSONP" title="JSONP">2</a> or a CORS<a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="Cross-origin resource sharing">3</a> enabled server<a href="http://www.slideshare.net/jottley/cors-enable-alfresco-for-cors" title="CORS enable Alfresco">4</a> to enable building applications against the CMIS enabled repository.
+A browser binding DELETE should follow the model of a form POST according to the documentation. Playing around with the provided examples (there were no DELETE examples that I found doing a quick google search) I found it to be a simpler than a form POST. I should also note that these calls are governed by the <a href="http://en.wikipedia.org/wiki/Same-origin_policy" title="Same Origin Policy">same origin policy</a> so you’ll need to use either <a href="http://en.wikipedia.org/wiki/JSONP" title="JSONP">JSON-P</a> or a <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="Cross-origin resource sharing">CORS</a> enabled <a href="http://www.slideshare.net/jottley/cors-enable-alfresco-for-cors" title="CORS enable Alfresco">server</a> to enable building applications against the CMIS enabled repository.
 <br /><br />
 <em>I’m using curl for my examples.</em>
 <br /><br />
@@ -169,7 +169,7 @@ With the atompub binding we made a delete using the HTTP DELETE method. With the
 <h3 id="what-about-response-codes">What about response codes?</h3>
 <p>With atompub a successful delete would have resulted in a 204 response code and no response body. With the browser bindings a 200 response code is returned still with no body. (My preference would be that it returned a 204. This would keep consistency across the bindings and would match what I believe is proper DELETE response.)
 <br /><br />
-And response codes for Errors? You still see a 401 when a user needs to authenticate and a 404 if the object can’t be found. All other errors that I saw came back as 409s. This includes locked documents and folders containing children. If you receive a 409 result there are two json values you can look at to find the reason for the error: exception (the short description) and message (a fuller description of the error).</p>
+And response codes for Errors? You still see a 401 when a user needs to authenticate and a 404 if the object can’t be found. All other errors that I saw came back as 409s. This includes locked documents and attempting to delete folders containing children. If you receive a 409 result there are two json values you can look at to find the reason for the error: exception (the short description) and message (a fuller description of the error).</p>
 
 
       <hr />
