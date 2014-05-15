@@ -7,7 +7,7 @@ tags: [about, Jared Ottley]
 modified: 01-21-2014
 ---
 
-My name is **Jared Ottley**, I am an Engineer at *[Alfresco Software](http://www.alfresco.com/)*.  I started at Alfresco in 2007 as a Solutions Engineer.  I've also worked as a Senior Consultant and an Integrations Engineer while at Alfresco.  
+My name is **Jared Ottley**. I am an Engineer at *[Alfresco Software](http://www.alfresco.com/)*.  I started at Alfresco in 2007 as a Solutions Engineer.  I've also worked as a Senior Consultant and an Integrations Engineer while at Alfresco.  
   
   
 I've worked with Alfresco customers not only in the US and Canada, but also Australia and Japan.  As an Integration Engineer I worked on integrations with Jive, Dropbox, Google Docs/Drive and Salesforce.  
