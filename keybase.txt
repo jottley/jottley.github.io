@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/jottley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jared.ottleys.net
+  * I am jottley (https://keybase.io/jottley) on keybase.
+  * I have a public key ASA_iR5sAyr04RCHx6XY-fN90VNy2STvMXMSd1ElaVfetwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101eb23a3ee982c1748bb5535a381aeaa9d65fbf736b931c8bd1b70dc2405086cf90a",
+            "host": "keybase.io",
+            "kid": "01203f891e6c032af4e11087c7a5d8f9f37dd15372d924ef3173127751256957deb70a",
+            "uid": "52883d2f654bb5f315b5c72e471a9c19",
+            "username": "jottley"
+        },
+        "merkle_root": {
+            "ctime": 1499136026,
+            "hash": "776c85fd46ee6f7a4914c7698fad6561067af32645abaf1bf9b9605d4b4b6e20c794116fc2c42f622a0fb7fe0fb551c95cdf28af67a1030effcb7a72b1c9a9d7",
+            "hash_meta": "e6544a9f20ecb448a165d29bb89d13aaa98b42ae94c6e239dcbcccd7f7834602",
+            "seqno": 1208548
+        },
+        "service": {
+            "hostname": "jared.ottleys.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.24"
+    },
+    "ctime": 1499136059,
+    "expire_in": 504576000,
+    "prev": "c99e67ded93939bd4404bba7f312003fba218952352e930486b38a195d117e87",
+    "seqno": 22,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgP4kebAMq9OEQh8el2PnzfdFTctkk7zFzEndRJWlX3rcKp3BheWxvYWTFA0h7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxZWIyM2EzZWU5ODJjMTc0OGJiNTUzNWEzODFhZWFhOWQ2NWZiZjczNmI5MzFjOGJkMWI3MGRjMjQwNTA4NmNmOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwM2Y4OTFlNmMwMzJhZjRlMTEwODdjN2E1ZDhmOWYzN2RkMTUzNzJkOTI0ZWYzMTczMTI3NzUxMjU2OTU3ZGViNzBhIiwidWlkIjoiNTI4ODNkMmY2NTRiYjVmMzE1YjVjNzJlNDcxYTljMTkiLCJ1c2VybmFtZSI6ImpvdHRsZXkifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0OTkxMzYwMjYsImhhc2giOiI3NzZjODVmZDQ2ZWU2ZjdhNDkxNGM3Njk4ZmFkNjU2MTA2N2FmMzI2NDVhYmFmMWJmOWI5NjA1ZDRiNGI2ZTIwYzc5NDExNmZjMmM0MmY2MjJhMGZiN2ZlMGZiNTUxYzk1Y2RmMjhhZjY3YTEwMzBlZmZjYjdhNzJiMWM5YTlkNyIsImhhc2hfbWV0YSI6ImU2NTQ0YTlmMjBlY2I0NDhhMTY1ZDI5YmI4OWQxM2FhYTk4YjQyYWU5NGM2ZTIzOWRjYmNjY2Q3Zjc4MzQ2MDIiLCJzZXFubyI6MTIwODU0OH0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJqYXJlZC5vdHRsZXlzLm5ldCIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjQifSwiY3RpbWUiOjE0OTkxMzYwNTksImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiYzk5ZTY3ZGVkOTM5MzliZDQ0MDRiYmE3ZjMxMjAwM2ZiYTIxODk1MjM1MmU5MzA0ODZiMzhhMTk1ZDExN2U4NyIsInNlcW5vIjoyMiwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDn1NNOaZ+j5/or3hqgjgkTgCxkQwmTk0GeXq5qZ0RFsbOFBHOGM3dVKx+te2Vw+LQznLNqVFQnkRdRXgaQ/6ABqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgsxFXYBJxZK62PDkeinAo00dWEl93/WN2jFHnXy37kiOjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jottley
+
+==================================================================
