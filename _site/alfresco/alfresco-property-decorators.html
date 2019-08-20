@@ -1,0 +1,312 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Alfresco: Property Decorators &#8211; I exist as I am</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jared.ottleys.net/images/">
+<meta name="twitter:title" content="Alfresco: Property Decorators">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@jottley">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alfresco: Property Decorators">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://jared.ottleys.net/alfresco/alfresco-property-decorators">
+<meta property="og:site_name" content="I exist as I am">
+
+
+
+
+
+<link rel="canonical" href="http://jared.ottleys.net/alfresco/alfresco-property-decorators">
+<link href="http://jared.ottleys.net/feed.xml" type="application/atom+xml" rel="alternate" title="I exist as I am Feed">
+<link rel="author" href="https://plus.google.com/u/0/116380333940951424604/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://jared.ottleys.net/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://jared.ottleys.net/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+
+<script src="http://jared.ottleys.net/assets/js/modernizr.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://jared.ottleys.net/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://jared.ottleys.net/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://jared.ottleys.net/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jared.ottleys.net/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jared.ottleys.net/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jared.ottleys.net/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div id="outer-wrap">
+<div id="inner-wrap">
+
+    <header id="top" role="banner">
+        <div class="block">
+            <h1 class="block-title">I exist as I am</h1>
+            <a class="nav-btn" id="nav-open-btn" href="#nav">Navigation</a>
+        </div>
+    </header>
+
+    <nav id="nav" role="navigation">
+        <div class="block">
+            <h2 class="block-title">Chapters</h2>
+            <ul>
+                
+				<li><a href="http://jared.ottleys.net/" >Home</a></li>
+		        
+				<li><a href="http://jared.ottleys.net/about/" >About</a></li>
+		        
+				<li><a href="http://jared.ottleys.net/articles/" >Articles</a></li>
+		        
+		        <li><a href="http://jared.ottleys.net/feed.xml" title="Atom/RSS feed">Feed</a>
+            </ul>
+            <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+        </div>
+    </nav>
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-side">
+    <img src="http://jared.ottleys.net/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+<h3>Jared Ottley</h3>
+<p>Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini.</p>
+<a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
+<a href="http://twitter.com/jottley" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://facebook.com/jottley" class="author-social" target="_blank"><i class="icon-facebook"></i> Facebook</a>
+<a href="https://plus.google.com/u/0/116380333940951424604/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/jottley" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://instagram.com/jaredrottley" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/jottley" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<a href="http://lastfm.com/user/jottley" class="author-social" target="_blank"><i class="icon-lastfm"></i> Last.fm</a>
+<a href="http://www.flickr.com/photos/jottley" class="author-social" target="_blank"><i class="icon-flickr"></i> Flickr</a>
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Alfresco: Property Decorators</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <p><strong>Note</strong>: <em>After fighting through some upgrade issues with MySQL…and it still not being 100% fixed…I’m finally at a point where I can comfortably write to the DB and bring to you two, thats right two!, new posts in quick succession.  I’m hoping to make this a trend to have two new posts a month (so look for 4 this month as these two should have gone live last month). So without further ado….</em></p>
+
+<p>One of the exciting, at least in my opinion, new features of Alfresco 4 is the <a href="http://blogs.alfresco.com/wp/mikeh/2011/09/26/share-document-library-extensions-in-v4-0/">Share Document Library Extension’s</a> (hat tip to <a href="https://twitter.com/#!/mikehatfield">Mike Hatfield)</a>.  In the above post Mike goes in to detail on how to use this new feature and I’m going to share an example on how I’m using it as part of integration with Dropbox I’m working on.</p>
+
+<h3 id="the-problem-set"><strong>The Problem Set</strong></h3>
+
+<p>As part of the integration we need to add a status indicator (see the <a href="http://blogs.alfresco.com/wp/mikeh/2011/09/26/share-document-library-extensions-in-v4-0/">above article </a>for in depth details on status indicators) to, as the name states, indicate that the file/folder is in a specific state, ie synced to Dropbox.  Early on this was a simple tasks: does it have a specific aspect or not.  As the project has moved forward, we’ve raised the complexity: does it have a specific association and does that association have a child association of a specific value…a direct correlation between this child association and a specific user.  Now that we have moved beyond what the out of the box evaluators can do directly, what are our options?</p>
+
+<h3 id="options">Options?</h3>
+
+<p>The Share Document Library Extension Framework provides two options for retrieving additional metadata/values from the repository tier: Custom Responses and Property Decorators.</p>
+
+<p>Custom Responses allow you to return information that is not specific to any node.  Alfresco 4 uses this to return information about our Sharepoint Protocol integration.</p>
+
+<p>Property Decorators allow you to return node specific information in a more usable format to the web tier (ie Share).  For example rewriting a nodeRef to a filename, or a username as first and last name. Or as in our case, a new set of properties or key/value pairs.</p>
+
+<p>Since we are looking for specific information about a node, a property decorator is what we will need.</p>
+
+<h3 id="implemention">Implemention</h3>
+
+<p>A property decorator needs to have the following:</p>
+
+<p>A content model property to hold a map of properties. In our model we added a property similar to:</p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;property name="alf:propertyHolder"&gt;
+    &lt;type&gt;d:boolean&lt;/type&gt;
+    &lt;default&gt;false&lt;/default&gt;
+    &lt;index enabled="false"/&gt;
+&lt;/property&gt;
+</pre>
+
+<p>This property will never be needed in the index since it will always be the same value until it is requested in Share.</p>
+
+<p>Next we need to implement our logic.  This requires a new Java class that implements PropertyDecorator.</p>
+
+<pre class="brush: java; title: ; notranslate" title="">public class CustomProperty
+    implements PropertyDecorator
+{
+
+  //Add any needed services
+
+    @Override
+    public Serializable decorate(NodeRef nodeRef, String propertyName, Serializable value)
+    {
+        Map&lt;String, Serializable&gt; map = new LinkedHashMap&lt;String, Serializable&gt;(4);
+
+        //Add logic here
+
+        //One to many
+        map.put("key", value);
+
+        return (Serializable)map;
+    }
+
+}
+</pre>
+
+<p>This also requires a new Spring bean definition.</p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;bean id="customProperty" class="org.alfresco.extension.repo.jscript.app.CustomProperty"&gt;
+   &lt;!-- Any needed service --&gt;
+  &lt;/bean&gt;
+</pre>
+
+<p>Lastly we need to add it to the list of propertyDecorators.  <em><strong>Update:</strong> I’ve add a <a href="http://jared.ottleys.net/alfresco/alfresco-property-decorators-cont" title="Alfresco: Property Decorators — cont.">new post</a> that covers how the mapping should occur and added a new bean here.</em> <del datetime="2012-04-02T20:26:51+00:00">Currently this requires overwriting the out of the box definition for applicationScriptUtils.  This could cause issues if you have several different AMPs that need to overwrite this bean. (I’ve opened ALF-13038 for this issue).<br /> </del></p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;bean id="customApplicationScriptUtils" parent="applicationScriptUtils"&gt;
+ &lt;property name="decoratedProperties"&gt;
+    &lt;map merge="true"&gt;
+       &lt;entry key="alf:propertyHolder"&gt;
+          &lt;ref bean="customDecoratorBean"/&gt;
+       &lt;/entry&gt;
+    &lt;/map&gt;
+ &lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+
+<p>Now this completes the repo side of our extension.  Now we need to work with the values returned on the Share side.  We needr a status indicator so we’ll focus there.</p>
+
+<p>First we’ll define the evaluator.  We need to add the evaluator to <code class="highlighter-rouge">web-extension/custom-slingshot-something-context.xml</code></p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;bean id="evaluator.doclib.indicator.custom" parent="evaluator.doclib.metadata.value"&gt;
+      &lt;property name="accessor" value="properties.customProperty"/&gt;
+	  &lt;property name="comparator"&gt;
+         &lt;bean class="org.alfresco.web.evaluator.StringEqualsComparator"&gt;
+            &lt;property name="value" value="true" /&gt;
+         &lt;/bean&gt;
+      &lt;/property&gt;
+   &lt;/bean&gt;
+</pre>
+
+<p>It is important to note that the value of the accessor is not the content model property name, but the key value used in our map from the CustomProperty class.</p>
+
+<p>And finally, we use the evaluator in our indicator config. This is added to our <code class="highlighter-rouge">share-config-custom.xml</code> under the <code class="highlighter-rouge">META-INF</code> in our custom jar file.</p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;config evaluator="string-compare" condition="DocumentLibrary"&gt;
+		&lt;indicators&gt;
+			&lt;indicator id="customDecorator" index="250" icon="custom-16.png"&gt;
+				&lt;evaluator&gt;evaluator.doclib.indicator.custom&lt;/evaluator&gt;
+			&lt;/indicator&gt;
+		&lt;/indicators&gt;
+&lt;/config&gt;
+</pre>
+
+<p>In conclusion, the Share Document Library Extension Framework is a powerful new tool in the developer toolbox.</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://jared.ottleys.net/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+<h3>Jared Ottley</h3>
+<p>Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini.</p>
+<a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
+<a href="http://twitter.com/jottley" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://facebook.com/jottley" class="author-social" target="_blank"><i class="icon-facebook"></i> Facebook</a>
+<a href="https://plus.google.com/u/0/116380333940951424604/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/jottley" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://instagram.com/jaredrottley" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/jottley" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<a href="http://lastfm.com/user/jottley" class="author-social" target="_blank"><i class="icon-lastfm"></i> Last.fm</a>
+<a href="http://www.flickr.com/photos/jottley" class="author-social" target="_blank"><i class="icon-flickr"></i> Flickr</a>
+
+        </div>
+        <p class="byline"><strong>Alfresco: Property Decorators</strong> was published on <time datetime="2012-02-15T00:00:00-07:00" itemprop="datePublished">February 15, 2012</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://jared.ottleys.net/about" title="About Jared Ottley" itemprop="url">Jared Ottley</a></span></span>.</p>
+      </footer>
+      
+
+      
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://jared.ottleys.net/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete" title="Alfresco&#58; CMIS Browser Binding DELETE example">Alfresco&#58; CMIS Browser Binding DELETE example</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://jared.ottleys.net/alfresco/alfresco-property-decorators-cont" title="Alfresco: Property Decorators &#8212; cont.">Alfresco: Property Decorators &#8212; cont.</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://jared.ottleys.net/alfresco/alfresco-simple-workflow-web-scripts" title="Alfresco: Simple Workflow Web Scripts">Alfresco: Simple Workflow Web Scripts</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2019 Jared Ottley. The thoughts here are my own and are not my employers...so blame me.</span>
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://jared.ottleys.net/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://jared.ottleys.net/assets/js/scripts.min.js"></script>
+<script src="http://jared.ottleys.net/assets/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-73397-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>

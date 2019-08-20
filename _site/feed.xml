@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://jared.ottleys.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://jared.ottleys.net" />
-<updated>2014-04-15T10:33:22-06:00</updated>
+<updated>2019-08-19T23:27:41-06:00</updated>
 <id>http://jared.ottleys.net/</id>
 <author>
   <name>Jared Ottley</name>
@@ -36,36 +36,30 @@ There are two ways to address the object that you want to delete: using the obje
 &lt;h3 id=&quot;using-objectid&quot;&gt;Using objectId&lt;/h3&gt;
 &lt;p&gt;To delete by objectId we need to include the ‘objectId=’ parameter along with cmis objectId (ex. 7ab93c6a-9520-40dd-be74-bae52f4bd6ca;1.0).&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;objectId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;7ab93c6a-9520-40dd-be74-bae52f4bd6ca&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1.0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&amp;amp;objectId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;7ab93c6a-9520-40dd-be74-bae52f4bd6ca&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1.0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;by-path&quot;&gt;By Path&lt;/h3&gt;
 &lt;p&gt;To delete by path you need to include the full path in the URL. There is no need to include the objectId in the by path call as the path has precedence over the objectId&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;Sites/internal2/documentLibrary/test.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Sites/internal2/documentLibrary/test.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now with the basics of addressing the document or folder under our belt we can pull together the rest of the call.
 &lt;br /&gt;&lt;br /&gt;
 With the atompub binding we made a delete using the HTTP DELETE method. With the browser binding a delete is made using the HTTP POST method. To indicate our call is a delete we add the ‘cmisaction=’ parameter with a value of delete to our call.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;cmisaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;cmisaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;A full objectId call (made against Alfresco Cloud) would use a URL like the following:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root?cmisaction&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;objectId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;804f6300-38cd-48a4-86db-499f58497ae5&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1.0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root?cmisaction&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete&amp;amp;objectId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;804f6300-38cd-48a4-86db-499f58497ae5&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1.0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The same call using a path:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root/Sites/internal2/documentLibrary/test.txt?cmisaction&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root/Sites/internal2/documentLibrary/test.txt?cmisaction&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;delete&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Using the objectId example from above a call using curl against the Alfresco Cloud Public API would look like:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;curl -X POST &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root?cmisaction=delete&amp;amp;objectId=804f6300-38cd-48a4-86db-499f58497ae5;1.0&amp;quot;&lt;/span&gt; --header &lt;span class=&quot;s2&quot;&gt;&amp;quot;Authorization:Bearer 42b8c319-344c-4273-b94c-b4c23482be6b&amp;quot;&lt;/span&gt; -IL
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;s2&quot;&gt;&quot;https://api.alfresco.com/ottleys.net/public/cmis/versions/1.1/browser/root?cmisaction=delete&amp;amp;objectId=804f6300-38cd-48a4-86db-499f58497ae5;1.0&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--header&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Authorization:Bearer 42b8c319-344c-4273-b94c-b4c23482be6b&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-IL&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;(For those unfamiliar with curl I’ve added the -IL options to the command so that I can see details about the response (not including the body).&lt;/p&gt;
 
@@ -92,20 +86,19 @@ And response codes for Errors? You still see a 401 when a user needs to authenti
   </author>
   <content type="html">&lt;p&gt;In my post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-property-decorators&quot; title=&quot;Alfresco: Property Decorators&quot;&gt;Property Decorators&lt;/a&gt; I pointed out that there was an &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-13038&quot;&gt;issue&lt;/a&gt; adding a customer property decorator: you couldn’t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well &lt;a href=&quot;http://twitter.com/#!/mikehatfield&quot;&gt;Mike Hatfield&lt;/a&gt; has found a solution which is just awesome: &lt;a href=&quot;http://forum.springsource.org/showthread.php?53358-Simple-merge-of-util-map&quot;&gt;Map Merge&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
-It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the &lt;code&gt;applicationScriptUtils&lt;/code&gt; bean. Add a single property of &lt;code&gt;decoratedProperties&lt;/code&gt; and define a map in the property. When you define the map add the attribute &lt;code&gt;merge=&quot;true&quot;&lt;/code&gt;. Finally, add your custom property to decorator bean mappings. Done!&lt;/p&gt;
+It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the &lt;code class=&quot;highlighter-rouge&quot;&gt;applicationScriptUtils&lt;/code&gt; bean. Add a single property of &lt;code class=&quot;highlighter-rouge&quot;&gt;decoratedProperties&lt;/code&gt; and define a map in the property. When you define the map add the attribute &lt;code class=&quot;highlighter-rouge&quot;&gt;merge=&quot;true&quot;&lt;/code&gt;. Finally, add your custom property to decorator bean mappings. Done!&lt;/p&gt;
 
 &lt;p&gt;Here is an example:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;customApplicationScriptUtils&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;applicationScriptUtils&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;decoratedProperties&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;map&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;merge=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-         &lt;span class=&quot;nt&quot;&gt;&amp;lt;entry&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;alf:propertyHolder&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ref&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bean=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;customDecoratorBean&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;customApplicationScriptUtils&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;applicationScriptUtils&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;decoratedProperties&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;map&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;merge=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;entry&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;alf:propertyHolder&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ref&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bean=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;customDecoratorBean&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/entry&amp;gt;&lt;/span&gt;
       &lt;span class=&quot;nt&quot;&gt;&amp;lt;/map&amp;gt;&lt;/span&gt;
    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-property-decorators-cont&quot;&gt;Alfresco: Property Decorators &#8212; cont.&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on April 02, 2012.&lt;/p&gt;</content>
@@ -157,13 +150,13 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;The final field, folder, maps to approveFolder or rejectFolder. This is the folder node where the document should be moved or copied to when the appropriate action is taken.&lt;/p&gt;
 
-&lt;p&gt;The web script can be call by passing the simpleworkflow json object to &lt;code&gt;simpleworkflow/add/{store_type}/{store_id}/{id}&lt;/code&gt;. Upon completion a json object of &lt;code&gt;{ &quot;success&quot;: true|false] }&lt;/code&gt;. True upon successful completion, false if there was an error adding the simpleworkflow aspect to the node.&lt;/p&gt;
+&lt;p&gt;The web script can be call by passing the simpleworkflow json object to &lt;code class=&quot;highlighter-rouge&quot;&gt;simpleworkflow/add/{store_type}/{store_id}/{id}&lt;/code&gt;. Upon completion a json object of &lt;code class=&quot;highlighter-rouge&quot;&gt;{ &quot;success&quot;: true|false] }&lt;/code&gt;. True upon successful completion, false if there was an error adding the simpleworkflow aspect to the node.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Using a Simple Workflow from a Web Script&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;This web script was originally developed for a customer to return XML, but I’ve now updated it to return json by default. The XML is maintained here for backwards compatibility.&lt;/p&gt;
 
-&lt;p&gt;When a simple workflow aspect is added to a node, it just adds the properties of what should occur when an accept or reject action is taken. The actual actions of what happens is built into UIs. So the web scripts need to do the same: perform the copy or move to the targeted folder. The call is pretty simple: &lt;code&gt;simpleworkflow/{accept|reject}/{store_type}/{store_id}/{id}&lt;/code&gt;. The json or XML that is returned let us know of either the success or the failure of this action. Failures can provide some information on why the failure occurred. A success messages, provides more detail: what action occured — copy or move, which step was taken — returning the name as set in the approveStep or rejectStep properties, the folder that document was moved or copied to. The destination that is returned is the human readable path. (If there is any interest we can update this to return the nodeRef as well as the path.)&lt;/p&gt;
+&lt;p&gt;When a simple workflow aspect is added to a node, it just adds the properties of what should occur when an accept or reject action is taken. The actual actions of what happens is built into UIs. So the web scripts need to do the same: perform the copy or move to the targeted folder. The call is pretty simple: &lt;code class=&quot;highlighter-rouge&quot;&gt;simpleworkflow/{accept|reject}/{store_type}/{store_id}/{id}&lt;/code&gt;. The json or XML that is returned let us know of either the success or the failure of this action. Failures can provide some information on why the failure occurred. A success messages, provides more detail: what action occured — copy or move, which step was taken — returning the name as set in the approveStep or rejectStep properties, the folder that document was moved or copied to. The destination that is returned is the human readable path. (If there is any interest we can update this to return the nodeRef as well as the path.)&lt;/p&gt;
 
 &lt;p&gt;The json returned looks like:&lt;/p&gt;
 
@@ -381,7 +374,7 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;Now this completes the repo side of our extension.  Now we need to work with the values returned on the Share side.  We needr a status indicator so we’ll focus there.&lt;/p&gt;
 
-&lt;p&gt;First we’ll define the evaluator.  We need to add the evaluator to &lt;code&gt;web-extension/custom-slingshot-something-context.xml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;First we’ll define the evaluator.  We need to add the evaluator to &lt;code class=&quot;highlighter-rouge&quot;&gt;web-extension/custom-slingshot-something-context.xml&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;bean id=&quot;evaluator.doclib.indicator.custom&quot; parent=&quot;evaluator.doclib.metadata.value&quot;&amp;gt;
       &amp;lt;property name=&quot;accessor&quot; value=&quot;properties.customProperty&quot;/&amp;gt;
@@ -395,7 +388,7 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;It is important to note that the value of the accessor is not the content model property name, but the key value used in our map from the CustomProperty class.&lt;/p&gt;
 
-&lt;p&gt;And finally, we use the evaluator in our indicator config. This is added to our &lt;code&gt;share-config-custom.xml&lt;/code&gt; under the &lt;code&gt;META-INF&lt;/code&gt; in our custom jar file.&lt;/p&gt;
+&lt;p&gt;And finally, we use the evaluator in our indicator config. This is added to our &lt;code class=&quot;highlighter-rouge&quot;&gt;share-config-custom.xml&lt;/code&gt; under the &lt;code class=&quot;highlighter-rouge&quot;&gt;META-INF&lt;/code&gt; in our custom jar file.&lt;/p&gt;
 
 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;config evaluator=&quot;string-compare&quot; condition=&quot;DocumentLibrary&quot;&amp;gt;
 		&amp;lt;indicators&amp;gt;
@@ -450,13 +443,13 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;There are a few things that we need to know as we get started. First, when a site is created in Alfresco Share, the content nodes supporting discussions are not created.  Only after a user accesses the discussion component does it get created.&lt;/p&gt;
 
-&lt;p&gt;Second, discussions are created as &lt;code&gt;fm:topic&lt;/code&gt; types.  Posts are added as children of &lt;code&gt;fm:topic&lt;/code&gt; as a &lt;code&gt;fm:post&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Second, discussions are created as &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; types.  Posts are added as children of &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; as a &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:post&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;using-a-rule&quot;&gt;&lt;strong&gt;Using a Rule&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;The simplest way to add notifications is as a rule via the Alfresco Explorer client on the discussion space that is created for the site, under the Sites space.  Adding a rule to the disucssions space matching all content items will result on two emails (one for the creation of the topic and one for the first post).  So we  need to be more specific: We need to expose the Forum Post and  Topic types as Subtypes to the rules engine.  You add fm:topic as well if you want to enable delete notifications&lt;/p&gt;
 
-&lt;p&gt;To &lt;code&gt;web-client-config-custom.xml&lt;/code&gt; add&lt;/p&gt;
+&lt;p&gt;To &lt;code class=&quot;highlighter-rouge&quot;&gt;web-client-config-custom.xml&lt;/code&gt; add&lt;/p&gt;
 
 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;alfresco-config&amp;gt;
     &amp;lt;config evaluator=&quot;string-compare&quot; condition=&quot;Action Wizards&quot;&amp;gt;
@@ -468,11 +461,11 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 &amp;lt;/alfresco-config&amp;gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Topics are the best choice for building rules on.  Notifications on &lt;code&gt;fm:topic&lt;/code&gt; will work for create and delete but not update.  The title of a topic is stored on the first post of a discussion.  You can’t delete individual posts but you can delete a Topic so when specifying a delete notification it can be made directly against a topic,but again…it is easier to just do the same using fm:post.&lt;/p&gt;
+&lt;p&gt;Topics are the best choice for building rules on.  Notifications on &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; will work for create and delete but not update.  The title of a topic is stored on the first post of a discussion.  You can’t delete individual posts but you can delete a Topic so when specifying a delete notification it can be made directly against a topic,but again…it is easier to just do the same using fm:post.&lt;/p&gt;
 
 &lt;p&gt;The notification template would be added to email templates and would look like:&lt;/p&gt;
 
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot; title=&quot;&quot;&gt;A new post is available in the &#39;${document.parent.childAssocs[&quot;cm:contains&quot;][0].properties.title}&#39; dicussion in the &#39;${document.parent.parent.parent.properties.name}&#39; site, it was added by ${person.properties.firstName}&amp;lt;#if person.properties.lastName?exists&amp;gt; ${person.properties.lastName}&amp;lt;/#if&amp;gt;.
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot; title=&quot;&quot;&gt;A new post is available in the '${document.parent.childAssocs[&quot;cm:contains&quot;][0].properties.title}' dicussion in the '${document.parent.parent.parent.properties.name}' site, it was added by ${person.properties.firstName}&amp;lt;#if person.properties.lastName?exists&amp;gt; ${person.properties.lastName}&amp;lt;/#if&amp;gt;.
 
 You can view it through this link:
 ${url.serverPath}/share/page/site/${document.parent.parent.parent.properties.name}/discussions-topicview?topicId=${document.parent.children[0].name}&amp;amp;listViewLinkBack=true
@@ -486,7 +479,7 @@ ${url.serverPath}/share/page/site/${document.parent.parent.parent.properties.nam
 
 &lt;h2 id=&quot;mail-action-sample-for-group-or-individual&quot;&gt;&lt;strong&gt;Mail action sample for group or individual.&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;The &lt;code&gt;to_many&lt;/code&gt; paramater currently only supports one group at a time….if you need to send to multiple people or groups, you’ll need to loop over the &lt;code&gt;to_many&lt;/code&gt; or &lt;code&gt;to&lt;/code&gt; paramaters and execute against each.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;to_many&lt;/code&gt; paramater currently only supports one group at a time….if you need to send to multiple people or groups, you’ll need to loop over the &lt;code class=&quot;highlighter-rouge&quot;&gt;to_many&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;to&lt;/code&gt; paramaters and execute against each.&lt;/p&gt;
 
 &lt;pre class=&quot;brush: jscript; title: ; notranslate&quot; title=&quot;&quot;&gt;var siteGroup = &quot;GROUP_site_&quot; + document.parent.parent.parent.name;
 var template = &quot;Data Dictionary/Email Templates/Notify Email Templates/share_discussion_notification.ftl&quot;;
@@ -616,7 +609,7 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 }
 &lt;/pre&gt;
 
-&lt;p&gt;These options should also take into account disabled accounts: (&lt;code&gt;person.isAccountEnabled(userName);&lt;/code&gt; The problem with this is that &lt;code&gt;isAccountEnables&lt;/code&gt; requires admin privileges.  There is no runAs for this kind of javascript so implementing this would require implementing the action in Java, which is outside the scope of this exercise.&lt;/p&gt;
+&lt;p&gt;These options should also take into account disabled accounts: (&lt;code class=&quot;highlighter-rouge&quot;&gt;person.isAccountEnabled(userName);&lt;/code&gt; The problem with this is that &lt;code class=&quot;highlighter-rouge&quot;&gt;isAccountEnables&lt;/code&gt; requires admin privileges.  There is no runAs for this kind of javascript so implementing this would require implementing the action in Java, which is outside the scope of this exercise.&lt;/p&gt;
 
 &lt;p&gt;Hopefully, I’ve given you some ideas of ways to approach adding discussion notifications.  The key here in discovering how to approach this was knowing where to look at how discussions are stored in the repository.  In fact this is the key for most any extension to Alfresco:  Asking yourself how does this work for this feature, which is similar to what I need, work in Alfresco? Understanding how this is pulled together from looking at the content model, looking at actual content/nodes through the node browser, understanding the relationships between nodes: parent/child and peer and sometimes digging into the source code can help to expand your understanding when looking to extend Alfresco.&lt;/p&gt;
 
@@ -643,7 +636,7 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 
 &lt;p&gt;I’ll admit right off that the code is ugly and repetitive.  But this is more of a Proof of Concept than a full production ready implementation (though it could definitely be used as such to provide a quick view of differences).&lt;/p&gt;
 
-&lt;p&gt;I’ve also probably bored you with the above so let’s just jump right in before I completely lose you… &lt;img src=&quot;http://jared.ottleys.net/wp-includes/images/smilies/icon_wink.gif&quot; alt=&quot;;-)&quot; class=&quot;wp-smiley&quot; /&gt; &lt;/p&gt;
+&lt;p&gt;I’ve also probably bored you with the above so let’s just jump right in before I completely lose you… &lt;img src=&quot;http://jared.ottleys.net/wp-includes/images/smilies/icon_wink.gif&quot; alt=&quot;;-)&quot; class=&quot;wp-smiley&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;using-the-web-script&quot;&gt;&lt;strong&gt;Using The Web Script&lt;/strong&gt;&lt;/h2&gt;
 
@@ -674,7 +667,7 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 &lt;p&gt;A couple of things that I think are important to note:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;File length:&lt;/strong&gt; When comparing two files there is always the possibility that one is longer/shorter than the other.  To simplify the comparison, I just append lines with a single space to the shorter file, simplifying any computational work needed for the comparison caused by the difference in length. 
+  &lt;li&gt;&lt;strong&gt;File length:&lt;/strong&gt; When comparing two files there is always the possibility that one is longer/shorter than the other.  To simplify the comparison, I just append lines with a single space to the shorter file, simplifying any computational work needed for the comparison caused by the difference in length.
     &lt;ul&gt;
       &lt;li&gt;I mentioned above that the appended line contains a single space.  This is done so the that the line appears in the output.  &amp;lt;div&amp;gt; tags with no content can be ignored by some browsers. The annotation/presentation uses a combination of &amp;lt;div&amp;gt; and &amp;lt;pre&amp;gt; tags.  The space is maintained in a &amp;lt;pre&amp;gt; tag forces the div element to be visible.&lt;/li&gt;
     &lt;/ul&gt;
@@ -754,7 +747,7 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 
 &lt;ul&gt;
   &lt;li&gt;The default quota in Alfresco is unlimited.  In other words, there is no limit in the amount (total size) of content a user can add/own in Alfresco.&lt;/li&gt;
-  &lt;li&gt;A quota can be set either on creation or at anytime during a users lifetime. 
+  &lt;li&gt;A quota can be set either on creation or at anytime during a users lifetime.
     &lt;ul&gt;
       &lt;li&gt;From within the UI a quota can be in either GB, MB or KB.&lt;/li&gt;
       &lt;li&gt;From an API  (Web Script, JavaScript, Java) it accepts the size in bytes.&lt;/li&gt;
@@ -896,7 +889,7 @@ return user; &lt;/pre&gt;
 
 &lt;p&gt;The first web script returns all of the permissions for a specified node.&lt;/p&gt;
 
-&lt;p&gt;The URL used is &lt;code&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The URL used is &lt;code class=&quot;highlighter-rouge&quot;&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Where&lt;/p&gt;
 
@@ -938,7 +931,7 @@ return user; &lt;/pre&gt;
 
 &lt;p&gt;This web script enables you to modify the permissions for a given node&lt;/p&gt;
 
-&lt;p&gt;It is called through the same URL as the above web script but as a POST instead of a get: &lt;code&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It is called through the same URL as the above web script but as a POST instead of a get: &lt;code class=&quot;highlighter-rouge&quot;&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Again, if the node is not found a 404 error will be returned, any missing URI parameters will result in a 400 error and if you don’t have permission to modify the node, you will get a 401 error.&lt;/p&gt;
 
@@ -1021,14 +1014,14 @@ return user; &lt;/pre&gt;
   &lt;code&gt;java -jar jmxterm-1.0-alpha-4-uber.jar&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Next, using the &lt;code&gt;open&lt;/code&gt; command connect to Alfresco&lt;/p&gt;
+&lt;p&gt;Next, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt; command connect to Alfresco&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;open service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u \ controlRole&amp;lt;br /&amp;gt;
 #Connection to service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi is opened&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Or, using the &lt;code&gt;jvms&lt;/code&gt; command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).&lt;/p&gt;
+&lt;p&gt;Or, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;jvms&lt;/code&gt; command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;jvms&amp;lt;br /&amp;gt;
@@ -1036,7 +1029,7 @@ return user; &lt;/pre&gt;
 13157    (m) - org.apache.catalina.startup.Bootstrap start&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;And once again use the &lt;code&gt;open&lt;/code&gt; command to connect&lt;/p&gt;
+&lt;p&gt;And once again use the &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt; command to connect&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;open 13157 -u controlRole -p change_asap&amp;lt;br /&amp;gt;
@@ -1062,21 +1055,21 @@ java.util.logging&amp;lt;br /&amp;gt;
 log4j&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;The bean you need is in the &lt;code&gt;Alfresco&lt;/code&gt; domain&lt;/p&gt;
+&lt;p&gt;The bean you need is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Alfresco&lt;/code&gt; domain&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;domain Alfresco&amp;lt;br /&amp;gt;
 #domain is set to Alfresco&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;You can look up the beans within the domain by using the &lt;code&gt;beans&lt;/code&gt; command.  There are quite a few beans in the &lt;code&gt;Alfresco&lt;/code&gt; domain, so let’s connect directly to the one that you need: &lt;code&gt;RepoServerMgmt&lt;/code&gt;. (Don’t forget jmxterm support auto completion.)&lt;/p&gt;
+&lt;p&gt;You can look up the beans within the domain by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;beans&lt;/code&gt; command.  There are quite a few beans in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Alfresco&lt;/code&gt; domain, so let’s connect directly to the one that you need: &lt;code class=&quot;highlighter-rouge&quot;&gt;RepoServerMgmt&lt;/code&gt;. (Don’t forget jmxterm support auto completion.)&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;bean Alfresco:Name=RepoServerMgmt&amp;lt;br /&amp;gt;
 #bean is set to Alfresco:Name=RepoServerMgmt&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Now that you have the bean, you can now find out what it does by using the &lt;code&gt;info&lt;/code&gt; command&lt;/p&gt;
+&lt;p&gt;Now that you have the bean, you can now find out what it does by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; command&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;info&amp;lt;br /&amp;gt;
@@ -1096,7 +1089,7 @@ log4j&lt;/code&gt;
 %2   - void invalidateUser(java.lang.String p1)&amp;lt;br /&amp;gt;
 %3   - [Ljava.lang.String; listUserNamesAll()&amp;lt;br /&amp;gt;
 %4   - [Ljava.lang.String; listUserNamesNonExpired()&amp;lt;br /&amp;gt;
-#there&#39;s no notifications&lt;/code&gt;
+#there's no notifications&lt;/code&gt;
 &lt;/p&gt;
 
 &lt;p&gt;There are lots of things you can do here, you can get attributes, you can set attributes, you can run opertaions.&lt;/p&gt;
@@ -1128,7 +1121,7 @@ UserCountNonExpired = 2;&lt;/code&gt;
 
 &lt;p&gt;So you have 2 user currently in Alfresco: System and admin&lt;/p&gt;
 
-&lt;p&gt;Let’s log out the admin user.  (Look back at the list from the &lt;code&gt;info&lt;/code&gt; command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)&lt;/p&gt;
+&lt;p&gt;Let’s log out the admin user.  (Look back at the list from the &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;run invalidateUser admin&amp;lt;br /&amp;gt;
@@ -1137,7 +1130,7 @@ UserCountNonExpired = 2;&lt;/code&gt;
 null&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Remember that this operation does not return anything so jmxterm returns &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Remember that this operation does not return anything so jmxterm returns &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Let’s now check and see if the admin user is still logged in.&lt;/p&gt;
 
@@ -1160,9 +1153,9 @@ null&lt;/code&gt;
   &lt;code&gt;$ echo get -s -b Alfresco:Name=RepoServerMgmt ReadOnly | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a &lt;code&gt;-s&lt;/code&gt; since we just want the value and not the full expression (&lt;code&gt;ReadOnly = &amp;lt;value&amp;gt;;&lt;/code&gt;) returned &lt;code&gt;-b&lt;/code&gt; names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.&lt;/p&gt;
+&lt;p&gt;When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a &lt;code class=&quot;highlighter-rouge&quot;&gt;-s&lt;/code&gt; since we just want the value and not the full expression (&lt;code class=&quot;highlighter-rouge&quot;&gt;ReadOnly = &amp;lt;value&amp;gt;;&lt;/code&gt;) returned &lt;code class=&quot;highlighter-rouge&quot;&gt;-b&lt;/code&gt; names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.&lt;/p&gt;
 
-&lt;p&gt;In this case the command returns the value &lt;code&gt;false&lt;/code&gt;. So the value of &lt;code&gt;ReadOnly&lt;/code&gt; is &lt;code&gt;false&lt;/code&gt; — Alfresco is in Read/Write mode.&lt;/p&gt;
+&lt;p&gt;In this case the command returns the value &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;. So the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; — Alfresco is in Read/Write mode.&lt;/p&gt;
 
 &lt;p&gt;Now let’s put it in ReadOnly mode&lt;/p&gt;
 
@@ -1170,7 +1163,7 @@ null&lt;/code&gt;
   &lt;code&gt;$ echo set -b Alfresco:Category=sysAdmin,Type=Configuration,id1=default server.transaction.allow-writes false | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;This follow pretty much the same pattern.  The &lt;code&gt;ReadOnly&lt;/code&gt; attribute is a read only property, so to change Alfresco into Read Only mode you set the value of &lt;code&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt;. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on &lt;code&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This follow pretty much the same pattern.  The &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; attribute is a read only property, so to change Alfresco into Read Only mode you set the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on &lt;code class=&quot;highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-jmx-from-the-command-line&quot;&gt;Alfresco: JMX from the command line&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on August 03, 2010.&lt;/p&gt;</content>
@@ -1217,14 +1210,14 @@ null&lt;/code&gt;
 
 &lt;p&gt;Adding the method implemented by the interface&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt; &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt; &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;`&amp;lt;/p&amp;gt;
-&amp;lt;pre style=&quot;padding-left: 30px&quot;&amp;gt;public void afterCreateVersion(
+&lt;p&gt;`&amp;lt;/p&amp;gt;&lt;/p&gt;
+&lt;pre style=&quot;padding-left: 30px&quot;&gt;public void afterCreateVersion(
 				NodeRef versionableNode,
-				Version version)&amp;lt;/pre&amp;gt;&lt;/p&gt;
+				Version version)&lt;/pre&gt;
 &lt;p&gt;`
 
 We also need to [bind][7] the [behavior][8] to the policy and we need to do this when the class is loaded by the springframework.  We wrap this registration in an init() method
@@ -1521,11 +1514,11 @@ coordinates = obj.Placemark[0].Point.coordinates[1]+&quot;,&quot;+obj.Placemark[
 &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
 
  var handleSuccess = function(o){
-    var div = document.getElementById(&#39;mapping&#39;);
+    var div = document.getElementById('mapping');
     div.innerHTML = o.responseText; }
 
 var handleFailure = function(o){
-    var div = document.getElementById(&#39;mapping&#39;);
+    var div = document.getElementById('mapping');
     div.innerHTML = &quot;Map not available&quot;; }
 
 var callback = {
@@ -1533,7 +1526,7 @@ var callback = {
  	  failure: handleFailure,
  	  argument: {} }
 
-var request = YAHOO.util.Connect.asyncRequest(&#39;GET&#39;, &#39;/alfresco/wcservice/map/workspace/SpacesStore/${document.id}&#39;, callback);
+var request = YAHOO.util.Connect.asyncRequest('GET', '/alfresco/wcservice/map/workspace/SpacesStore/${document.id}', callback);
 &amp;lt;/script&amp;gt;&lt;/pre&gt;
 
 &lt;p&gt;We want to incude the js references as the beginning. This enables us to make successful calls to this script without the wrapper of our presentation template.&lt;/p&gt;
@@ -1717,17 +1710,17 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 		var format = 6;
 	}
 	if (!offset) {
-		var offset = &#39;Z&#39;;
+		var offset = 'Z';
 		var date = date;
 	} else {
 		var d = offset.match(/([-+])([0-9]{2}):([0-9]{2})/);
 		var offsetnum = (Number(d[2]) * 60) + Number(d[3]);
-		offsetnum *= ((d[1] == &#39;-&#39;) ? -1 : 1);
+		offsetnum *= ((d[1] == '-') ? -1 : 1);
 		var date = new Date(Number(Number(date) + (offsetnum * 60000)));
 	}
 
 	var zeropad = function(num) {
-		return ((num &amp;lt; 10) ? &#39;0&#39; : &#39;&#39;) + num; 	}
+		return ((num &amp;lt; 10) ? '0' : '') + num; 	}
 
  	var str = &quot;&quot;;
  	str += date.getUTCFullYear(); 	if (format &amp;gt; 1) {
@@ -1742,7 +1735,7 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 	}
 	if (format &amp;gt; 5) {
 		var secs = Number(date.getUTCSeconds() + &quot;.&quot;
-				+ ((date.getUTCMilliseconds() &amp;lt; 100) ? &#39;0&#39; : &#39;&#39;)&lt;/pre&gt;
+				+ ((date.getUTCMilliseconds() &amp;lt; 100) ? '0' : '')&lt;/pre&gt;
 
 &lt;pre style=&quot;padding-left: 30px&quot;&gt;+ zeropad(date.getUTCMilliseconds()));&lt;/pre&gt;
 
@@ -1900,12 +1893,12 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 &lt;/p&gt;
 
 &lt;pre style=&quot;padding-left: 30px&quot;&gt;&amp;lt;contentItems&amp;gt;
-	&amp;lt;contentItem name=&#39;simple.doc&#39; path=&#39;/Company Home/test/Portal&#39; modDate=&#39;2010-04-26T16:21:20.612-06:00&#39;/&amp;gt;
-	&amp;lt;contentItem name=&#39;simpledraft.docx&#39; path=&#39;/Company Home/test/Portal&#39; modDate=&#39;2010-04-26T16:28:44.569-06:00&#39;/&amp;gt;
+	&amp;lt;contentItem name='simple.doc' path='/Company Home/test/Portal' modDate='2010-04-26T16:21:20.612-06:00'/&amp;gt;
+	&amp;lt;contentItem name='simpledraft.docx' path='/Company Home/test/Portal' modDate='2010-04-26T16:28:44.569-06:00'/&amp;gt;
 &amp;lt;/contentItems&amp;gt;&lt;/pre&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
-  If there is no modified content a simple &lt;span style=&quot;font-family: Consolas, Monaco, &#39;Courier New&#39;, Courier, monospace;line-height: 18px;font-size: 12px&quot;&gt;&lt;contentitems /&gt; &lt;/span&gt;is returned.
+  If there is no modified content a simple &lt;span style=&quot;font-family: Consolas, Monaco, 'Courier New', Courier, monospace;line-height: 18px;font-size: 12px&quot;&gt;&lt;contentItems /&gt; &lt;/span&gt;is returned.
 &lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
@@ -2080,11 +2073,11 @@ Status status, Cache cache)&amp;lt;br /&amp;gt;
   &lt;code&gt; Map model = new HashMap();&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;`&amp;lt;/p&amp;gt;
-&amp;lt;p style=&quot;padding-left: 90px&quot;&amp;gt;UUID uuid = UUID.randomUUID();&amp;lt;/p&amp;gt;
-&amp;lt;p style=&quot;padding-left: 90px&quot;&amp;gt;model.put(“uuid”, uuid.toString());&amp;lt;/p&amp;gt;
-&amp;lt;p style=&quot;padding-left: 90px&quot;&amp;gt;return model;&amp;lt;/p&amp;gt;
-&amp;lt;p style=&quot;padding-left: 60px&quot;&amp;gt;}&amp;lt;/p&amp;gt;&lt;/p&gt;
+&lt;p&gt;`&amp;lt;/p&amp;gt;&lt;/p&gt;
+&lt;p style=&quot;padding-left: 90px&quot;&gt;UUID uuid = UUID.randomUUID();&lt;/p&gt;
+&lt;p style=&quot;padding-left: 90px&quot;&gt;model.put(&quot;uuid&quot;, uuid.toString());&lt;/p&gt;
+&lt;p style=&quot;padding-left: 90px&quot;&gt;return model;&lt;/p&gt;
+&lt;p style=&quot;padding-left: 60px&quot;&gt;}&lt;/p&gt;
 &lt;p&gt;`
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
@@ -2168,7 +2161,7 @@ xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.
 &lt;p style=&quot;padding-left: 60px&quot;&gt;&amp;lt;bean id=&quot;webscript.org.alfresco.extension.uuid.uuid.get&quot;&lt;br /&gt;
 class=&quot;org.alfresco.extension.uuid.UUIDWebScript&quot;&lt;br /&gt;
 parent=&quot;webscript&quot;&amp;gt;&lt;br /&gt;
-&lt;/p&gt;
+&amp;lt;/bean&amp;gt;&lt;/p&gt;
 &lt;p&gt;`
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
@@ -2193,11 +2186,11 @@ elementFormDefault=&quot;qualified&quot;&amp;gt;&lt;/code&gt;
 &lt;/p&gt;
 
 `&lt;/p&gt;
-&lt;p style=&quot;padding-left: 60px&quot;&gt;&lt;xs:complextype name=&quot;uuid&quot;&gt;
-&lt;p style=&quot;padding-left: 90px&quot;&gt;&lt;xs:sequence&gt;
+&lt;p style=&quot;padding-left: 60px&quot;&gt;&lt;xs:complexType name=&quot;uuid&quot;&gt;&amp;lt;/p&amp;gt;
+&lt;p style=&quot;padding-left: 90px&quot;&gt;&lt;xs:sequence&gt;&amp;lt;/p&amp;gt;
 &lt;p style=&quot;padding-left: 120px&quot;&gt;&lt;xs:element name=&quot;uuid&quot; fixed=&quot;9c2fce39-3351-47c9-bb05-4b002967a00d&quot; type=&quot;xs:normalizedString&quot; /&gt;&lt;/p&gt;
-&lt;p style=&quot;padding-left: 90px&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;padding-left: 60px&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;padding-left: 90px&quot;&gt;&amp;lt;/xs:sequence&amp;gt;&lt;/p&gt;
+&lt;p style=&quot;padding-left: 60px&quot;&gt;&amp;lt;/xs:complexType&amp;gt;&lt;/p&gt;
 &lt;p&gt;`
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
@@ -2276,7 +2269,7 @@ targetNamespace=&quot;http://www.alfresco.org/alfresco/sample&quot;&amp;gt; &lt;
  [7]: http://wiki.alfresco.com/wiki/AMP_Files
  [8]: http://code.google.com/p/alfresco-uuid-webscript/source/checkout
  [9]: http://alfresco-uuid-webscript.googlecode.com/files/alfresco-uuid-webscript.amp
-&lt;/p&gt;&lt;/p&gt;&lt;/xs:sequence&gt;&lt;/p&gt;&lt;/xs:complextype&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;/p&gt;&lt;/xs:sequence&gt;&lt;/p&gt;&lt;/xs:complexType&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-wcm-forms-unique-identifier&quot;&gt;Alfresco WCM Forms: Unique Identifier&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 24, 2010.&lt;/p&gt;</content>
 </entry>

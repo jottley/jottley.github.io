@@ -1,6 +1,6 @@
 title:            I exist as I am
 tagline:          Do not go where the path may lead, go instead where there is no path and leave a trail. --Ralph Waldo Emerson
-description:      Something Something Something
+description:      
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://jared.ottleys.net
 
@@ -19,15 +19,15 @@ owner:
   instagram:      jaredrottley
   lastfm:         user/jottley
   flickr:         jottley
-  tumblr:         
+  tumblr:
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    https://plus.google.com/u/0/116380333940951424604/posts
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-73397-1
-google_verify:      
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:        
+bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -42,7 +42,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Denver
 future:      true
-pygments:    true
+highlighter: rouge
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
@@ -53,14 +53,14 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
-  coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+  syntax_highlighter_opts:
+    line_numbers:
+    line_numbers_start: 1
+    tab_width: 4
+    bold_every: 10
+    css: class
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

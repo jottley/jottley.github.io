@@ -1,0 +1,379 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Alfresco: JMX from the command line &#8211; I exist as I am</title>
+<meta name="description" content="">
+<meta name="keywords" content="Alfresco, JMX">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jared.ottleys.net/images/">
+<meta name="twitter:title" content="Alfresco: JMX from the command line">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@jottley">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alfresco: JMX from the command line">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://jared.ottleys.net/alfresco/alfresco-jmx-from-the-command-line">
+<meta property="og:site_name" content="I exist as I am">
+
+
+
+
+
+<link rel="canonical" href="http://jared.ottleys.net/alfresco/alfresco-jmx-from-the-command-line">
+<link href="http://jared.ottleys.net/feed.xml" type="application/atom+xml" rel="alternate" title="I exist as I am Feed">
+<link rel="author" href="https://plus.google.com/u/0/116380333940951424604/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://jared.ottleys.net/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://jared.ottleys.net/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+
+<script src="http://jared.ottleys.net/assets/js/modernizr.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://jared.ottleys.net/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://jared.ottleys.net/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://jared.ottleys.net/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jared.ottleys.net/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jared.ottleys.net/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jared.ottleys.net/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div id="outer-wrap">
+<div id="inner-wrap">
+
+    <header id="top" role="banner">
+        <div class="block">
+            <h1 class="block-title">I exist as I am</h1>
+            <a class="nav-btn" id="nav-open-btn" href="#nav">Navigation</a>
+        </div>
+    </header>
+
+    <nav id="nav" role="navigation">
+        <div class="block">
+            <h2 class="block-title">Chapters</h2>
+            <ul>
+                
+				<li><a href="http://jared.ottleys.net/" >Home</a></li>
+		        
+				<li><a href="http://jared.ottleys.net/about/" >About</a></li>
+		        
+				<li><a href="http://jared.ottleys.net/articles/" >Articles</a></li>
+		        
+		        <li><a href="http://jared.ottleys.net/feed.xml" title="Atom/RSS feed">Feed</a>
+            </ul>
+            <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+        </div>
+    </nav>
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-side">
+    <img src="http://jared.ottleys.net/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+<h3>Jared Ottley</h3>
+<p>Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini.</p>
+<a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
+<a href="http://twitter.com/jottley" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://facebook.com/jottley" class="author-social" target="_blank"><i class="icon-facebook"></i> Facebook</a>
+<a href="https://plus.google.com/u/0/116380333940951424604/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/jottley" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://instagram.com/jaredrottley" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/jottley" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<a href="http://lastfm.com/user/jottley" class="author-social" target="_blank"><i class="icon-lastfm"></i> Last.fm</a>
+<a href="http://www.flickr.com/photos/jottley" class="author-social" target="_blank"><i class="icon-flickr"></i> Flickr</a>
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Alfresco: JMX from the command line</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <p><a href="http://java.sun.com/javase/6/docs/technotes/guides/jmx/index.html">JMX</a> is great. <a href="http://www.alfresco.com">Alfresco</a> and <a href="http://wiki.alfresco.com/wiki/JMX">JMX</a> is awesome. I’ve written before about <a href="http://jared.ottleys.net/alfresco/tunneling-debug-and-jmx-for-alfresco">configuring Alfresco to use tunneling to connect JMX &amp; debuggers</a> to servers that don’t allow access to the higher numbered ports (or to only a few ports).  Let’s add another cool tool. (JMX is an Enterprise only feature of Alfresco.)</p>
+
+<p>The <a href="http://wiki.alfresco.com">Alfresco wiki</a> covers a few of the <a href="http://wiki.alfresco.com/wiki/JMX#Connecting_through_JMX_Consoles_.2F_JSR-160">clients</a> that are available out there.  Let’s add another type to the list:  JMX from the command line.  There are a <a href="http://www.google.com/search?sourceid=chrome&amp;ie=UTF-8&amp;q=jmx+command+line">couple of options</a> for us to choose from.   I am partial to j<a href="http://www.cyclopsgroup.org/projects/jmxterm/index.html">mxterm</a> from <a href="http://www.cyclopsgroup.org/">CyclopsGroups.org</a></p>
+
+<p>Jmxterm is an opensource  JMX Client (<a href="http://sourceforge.net/projects/cyclops-group/files/jmxterm/">download</a>).  It supports auto completion, history browsing and scripting.  In a word: cool.</p>
+
+<p>Let’s jump in…</p>
+
+<p>First thing you need to do with the client is connect</p>
+
+<p>With jmxterm you can pass a connection string via the jar to connect to Alfresco</p>
+
+<p style="padding-left: 30px">
+  <code>java -jar jmxterm-1.0-alpha-4-uber.jar -l \ service:jmx:rmi:///jndi/rmi://&lt;host&gt;:50500/alfresco/jmxrmi -p &lt;password&gt; -u &lt;user&gt;</code>
+</p>
+
+<p>Or, you can connect via the interactive shell</p>
+
+<p style="padding-left: 30px">
+  <code>java -jar jmxterm-1.0-alpha-4-uber.jar</code>
+</p>
+
+<p>Next, using the <code class="highlighter-rouge">open</code> command connect to Alfresco</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;open service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u \ controlRole&lt;br /&gt;
+#Connection to service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi is opened</code>
+</p>
+
+<p>Or, using the <code class="highlighter-rouge">jvms</code> command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;jvms&lt;br /&gt;
+94822    ( ) - jmxterm-1.0-alpha-4-uber.jar&lt;br /&gt;
+13157    (m) - org.apache.catalina.startup.Bootstrap start</code>
+</p>
+
+<p>And once again use the <code class="highlighter-rouge">open</code> command to connect</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;open 13157 -u controlRole -p change_asap&lt;br /&gt;
+#Connection to 13157 is opened</code>
+</p>
+
+<p>Now that you are connected  let’s perform a simple operation, finding out who is logged into Alfresco and then disconnect one of the users.</p>
+
+<p>First you’ll list the domains that are available</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;domains&lt;br /&gt;
+#following domains are available&lt;br /&gt;
+Alfresco&lt;br /&gt;
+Catalina&lt;br /&gt;
+JMImplementation&lt;br /&gt;
+Users&lt;br /&gt;
+axis&lt;br /&gt;
+com.sun.management&lt;br /&gt;
+connector&lt;br /&gt;
+java.lang&lt;br /&gt;
+java.util.logging&lt;br /&gt;
+log4j</code>
+</p>
+
+<p>The bean you need is in the <code class="highlighter-rouge">Alfresco</code> domain</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;domain Alfresco&lt;br /&gt;
+#domain is set to Alfresco</code>
+</p>
+
+<p>You can look up the beans within the domain by using the <code class="highlighter-rouge">beans</code> command.  There are quite a few beans in the <code class="highlighter-rouge">Alfresco</code> domain, so let’s connect directly to the one that you need: <code class="highlighter-rouge">RepoServerMgmt</code>. (Don’t forget jmxterm support auto completion.)</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;bean Alfresco:Name=RepoServerMgmt&lt;br /&gt;
+#bean is set to Alfresco:Name=RepoServerMgmt</code>
+</p>
+
+<p>Now that you have the bean, you can now find out what it does by using the <code class="highlighter-rouge">info</code> command</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;info&lt;br /&gt;
+#mbean = Alfresco:Name=RepoServerMgmt&lt;br /&gt;
+#class name = org.alfresco.repo.admin.RepoServerMgmt&lt;br /&gt;
+# attributes&lt;br /&gt;
+%0   - LinkValidationDisabled (boolean, r)&lt;br /&gt;
+%1   - MaxUsers (int, r)&lt;br /&gt;
+%2   - ReadOnly (boolean, r)&lt;br /&gt;
+%3   - TicketCountAll (int, r)&lt;br /&gt;
+%4   - TicketCountNonExpired (int, r)&lt;br /&gt;
+%5   - UserCountAll (int, r)&lt;br /&gt;
+%6   - UserCountNonExpired (int, r)&lt;br /&gt;
+# operations&lt;br /&gt;
+%0   - int invalidateTicketsAll()&lt;br /&gt;
+%1   - int invalidateTicketsExpired()&lt;br /&gt;
+%2   - void invalidateUser(java.lang.String p1)&lt;br /&gt;
+%3   - [Ljava.lang.String; listUserNamesAll()&lt;br /&gt;
+%4   - [Ljava.lang.String; listUserNamesNonExpired()&lt;br /&gt;
+#there's no notifications</code>
+</p>
+
+<p>There are lots of things you can do here, you can get attributes, you can set attributes, you can run opertaions.</p>
+
+<p>Looking at the returned attributes you can tell a few things: the datatype of each attribute and if you can change it.  In this case none of our attributes can be modified, they are all read only (r).  ReadWrite would be signified by rw.</p>
+
+<p>Operations are just like Java functions: they can have a return type and you might be able pass parameters to them.</p>
+
+<p>It can also list notifcations, but there is no mechanism (that I have found yet) in jmxterm to subscribe or unsubscribe to them.</p>
+
+<p>Let’s do some more work:</p>
+
+<p>First let’s see how many users are logged in.</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;get UserCountNonExpired&lt;br /&gt;
+#mbean = Alfresco:Name=RepoServerMgmt:&lt;br /&gt;
+UserCountNonExpired = 2;</code>
+</p>
+
+<p>And now let’s find out who these two users are</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;run listUserNamesNonExpired&lt;br /&gt;
+#calling operation listUserNamesNonExpired of mbean Alfresco:Name=RepoServerMgmt&lt;br /&gt;
+#operation returns:&lt;br /&gt;
+[ System, admin ]</code>
+</p>
+
+<p>So you have 2 user currently in Alfresco: System and admin</p>
+
+<p>Let’s log out the admin user.  (Look back at the list from the <code class="highlighter-rouge">info</code> command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;run invalidateUser admin&lt;br /&gt;
+#calling operation invalidateUser of mbean Alfresco:Name=RepoServerMgmt&lt;br /&gt;
+#operation returns:&lt;br /&gt;
+null</code>
+</p>
+
+<p>Remember that this operation does not return anything so jmxterm returns <code class="highlighter-rouge">null</code>.</p>
+
+<p>Let’s now check and see if the admin user is still logged in.</p>
+
+<p style="padding-left: 30px">
+  <code>$&gt;run listUserNamesNonExpired&lt;br /&gt;
+#calling operation listUserNamesNonExpired of mbean Alfresco:Name=RepoServerMgmt&lt;br /&gt;
+#operation returns:&lt;br /&gt;
+[ System ]</code>
+</p>
+
+<p>You’ve now run through some basic operations: connecting to Alfresco, listing and selecting the domain, listing and selecting the bean, discovering what the bean can do, getting an attribute, running an operation.</p>
+
+<p>The last things to cover are scripting/non-interactive mode and setting properties.</p>
+
+<p>From time to time you might see the need, to lock Alfresco down by setting it to Read Only mode. The following two commands will help us do this.</p>
+
+<p>First let’s check the current state:</p>
+
+<p style="padding-left: 30px">
+  <code>$ echo get -s -b Alfresco:Name=RepoServerMgmt ReadOnly | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n</code>
+</p>
+
+<p>When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a <code class="highlighter-rouge">-s</code> since we just want the value and not the full expression (<code class="highlighter-rouge">ReadOnly = &lt;value&gt;;</code>) returned <code class="highlighter-rouge">-b</code> names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.</p>
+
+<p>In this case the command returns the value <code class="highlighter-rouge">false</code>. So the value of <code class="highlighter-rouge">ReadOnly</code> is <code class="highlighter-rouge">false</code> — Alfresco is in Read/Write mode.</p>
+
+<p>Now let’s put it in ReadOnly mode</p>
+
+<p style="padding-left: 30px">
+  <code>$ echo set -b Alfresco:Category=sysAdmin,Type=Configuration,id1=default server.transaction.allow-writes false | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n</code>
+</p>
+
+<p>This follow pretty much the same pattern.  The <code class="highlighter-rouge">ReadOnly</code> attribute is a read only property, so to change Alfresco into Read Only mode you set the value of <code class="highlighter-rouge">server.transaction.allow-writes</code> to <code class="highlighter-rouge">false</code>. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on <code class="highlighter-rouge">server.transaction.allow-writes</code> to <code class="highlighter-rouge">true</code>.</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://jared.ottleys.net/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+<h3>Jared Ottley</h3>
+<p>Jared Ottley is an engineer at <a href='http://www.alfresco.com'>Alfresco</a>.  As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini.</p>
+<a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
+<a href="http://twitter.com/jottley" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://facebook.com/jottley" class="author-social" target="_blank"><i class="icon-facebook"></i> Facebook</a>
+<a href="https://plus.google.com/u/0/116380333940951424604/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/jottley" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://instagram.com/jaredrottley" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/jottley" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<a href="http://lastfm.com/user/jottley" class="author-social" target="_blank"><i class="icon-lastfm"></i> Last.fm</a>
+<a href="http://www.flickr.com/photos/jottley" class="author-social" target="_blank"><i class="icon-flickr"></i> Flickr</a>
+
+        </div>
+        <p class="byline"><strong>Alfresco: JMX from the command line</strong> was published on <time datetime="2010-08-03T00:00:00-06:00" itemprop="datePublished">August 03, 2010</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://jared.ottleys.net/about" title="About Jared Ottley" itemprop="url">Jared Ottley</a></span></span>.</p>
+      </footer>
+      
+
+      
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://jared.ottleys.net/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete" title="Alfresco&#58; CMIS Browser Binding DELETE example">Alfresco&#58; CMIS Browser Binding DELETE example</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://jared.ottleys.net/alfresco/alfresco-property-decorators-cont" title="Alfresco: Property Decorators &#8212; cont.">Alfresco: Property Decorators &#8212; cont.</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://jared.ottleys.net/alfresco/alfresco-simple-workflow-web-scripts" title="Alfresco: Simple Workflow Web Scripts">Alfresco: Simple Workflow Web Scripts</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2019 Jared Ottley. The thoughts here are my own and are not my employers...so blame me.</span>
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://jared.ottleys.net/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://jared.ottleys.net/assets/js/scripts.min.js"></script>
+<script src="http://jared.ottleys.net/assets/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-73397-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>

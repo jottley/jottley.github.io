@@ -33,7 +33,8 @@
                   url = decodeURIComponent(authCallbackUrl);
                statusEl.innerHTML = "Your authorization has been received.<br /> You are being redirected back to Alfresco to finish processing the authorization.";
                // Use a client side redirect to send the user there. That page should sort everything out and close itself, if possible.
-               window.location = url + "googleglass/completeauth?access_token=" + accessToken[1];
+               //window.location = url + "googleglass/completeauth?access_token=" + accessToken[1];
+	       window.location = url + "googledocs/completeauth?access_token=" + accessToken[1];    
             }
 		</script>
 	</body>
