@@ -201,7 +201,7 @@
 
 <p>Now this completes the repo side of our extension.  Now we need to work with the values returned on the Share side.  We needr a status indicator so we’ll focus there.</p>
 
-<p>First we’ll define the evaluator.  We need to add the evaluator to <code class="highlighter-rouge">web-extension/custom-slingshot-something-context.xml</code></p>
+<p>First we’ll define the evaluator.  We need to add the evaluator to <code class="language-plaintext highlighter-rouge">web-extension/custom-slingshot-something-context.xml</code></p>
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;bean id="evaluator.doclib.indicator.custom" parent="evaluator.doclib.metadata.value"&gt;
       &lt;property name="accessor" value="properties.customProperty"/&gt;
@@ -215,7 +215,7 @@
 
 <p>It is important to note that the value of the accessor is not the content model property name, but the key value used in our map from the CustomProperty class.</p>
 
-<p>And finally, we use the evaluator in our indicator config. This is added to our <code class="highlighter-rouge">share-config-custom.xml</code> under the <code class="highlighter-rouge">META-INF</code> in our custom jar file.</p>
+<p>And finally, we use the evaluator in our indicator config. This is added to our <code class="language-plaintext highlighter-rouge">share-config-custom.xml</code> under the <code class="language-plaintext highlighter-rouge">META-INF</code> in our custom jar file.</p>
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;config evaluator="string-compare" condition="DocumentLibrary"&gt;
 		&lt;indicators&gt;

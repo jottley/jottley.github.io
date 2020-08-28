@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2020-08-28T11:20:46-06:00</updated>
+<updated>2020-08-28T11:54:16-06:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jared Ottley</name>
@@ -86,7 +86,7 @@ And response codes for Errors? You still see a 401 when a user needs to authenti
   </author>
   <content type="html">&lt;p&gt;In my post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-property-decorators&quot; title=&quot;Alfresco: Property Decorators&quot;&gt;Property Decorators&lt;/a&gt; I pointed out that there was an &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-13038&quot;&gt;issue&lt;/a&gt; adding a customer property decorator: you couldn’t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well &lt;a href=&quot;http://twitter.com/#!/mikehatfield&quot;&gt;Mike Hatfield&lt;/a&gt; has found a solution which is just awesome: &lt;a href=&quot;http://forum.springsource.org/showthread.php?53358-Simple-merge-of-util-map&quot;&gt;Map Merge&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
-It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the &lt;code class=&quot;highlighter-rouge&quot;&gt;applicationScriptUtils&lt;/code&gt; bean. Add a single property of &lt;code class=&quot;highlighter-rouge&quot;&gt;decoratedProperties&lt;/code&gt; and define a map in the property. When you define the map add the attribute &lt;code class=&quot;highlighter-rouge&quot;&gt;merge=&quot;true&quot;&lt;/code&gt;. Finally, add your custom property to decorator bean mappings. Done!&lt;/p&gt;
+It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;applicationScriptUtils&lt;/code&gt; bean. Add a single property of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;decoratedProperties&lt;/code&gt; and define a map in the property. When you define the map add the attribute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;merge=&quot;true&quot;&lt;/code&gt;. Finally, add your custom property to decorator bean mappings. Done!&lt;/p&gt;
 
 &lt;p&gt;Here is an example:&lt;/p&gt;
 
@@ -150,13 +150,13 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;The final field, folder, maps to approveFolder or rejectFolder. This is the folder node where the document should be moved or copied to when the appropriate action is taken.&lt;/p&gt;
 
-&lt;p&gt;The web script can be call by passing the simpleworkflow json object to &lt;code class=&quot;highlighter-rouge&quot;&gt;simpleworkflow/add/{store_type}/{store_id}/{id}&lt;/code&gt;. Upon completion a json object of &lt;code class=&quot;highlighter-rouge&quot;&gt;{ &quot;success&quot;: true|false] }&lt;/code&gt;. True upon successful completion, false if there was an error adding the simpleworkflow aspect to the node.&lt;/p&gt;
+&lt;p&gt;The web script can be call by passing the simpleworkflow json object to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;simpleworkflow/add/{store_type}/{store_id}/{id}&lt;/code&gt;. Upon completion a json object of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ &quot;success&quot;: true|false] }&lt;/code&gt;. True upon successful completion, false if there was an error adding the simpleworkflow aspect to the node.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Using a Simple Workflow from a Web Script&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;This web script was originally developed for a customer to return XML, but I’ve now updated it to return json by default. The XML is maintained here for backwards compatibility.&lt;/p&gt;
 
-&lt;p&gt;When a simple workflow aspect is added to a node, it just adds the properties of what should occur when an accept or reject action is taken. The actual actions of what happens is built into UIs. So the web scripts need to do the same: perform the copy or move to the targeted folder. The call is pretty simple: &lt;code class=&quot;highlighter-rouge&quot;&gt;simpleworkflow/{accept|reject}/{store_type}/{store_id}/{id}&lt;/code&gt;. The json or XML that is returned let us know of either the success or the failure of this action. Failures can provide some information on why the failure occurred. A success messages, provides more detail: what action occured — copy or move, which step was taken — returning the name as set in the approveStep or rejectStep properties, the folder that document was moved or copied to. The destination that is returned is the human readable path. (If there is any interest we can update this to return the nodeRef as well as the path.)&lt;/p&gt;
+&lt;p&gt;When a simple workflow aspect is added to a node, it just adds the properties of what should occur when an accept or reject action is taken. The actual actions of what happens is built into UIs. So the web scripts need to do the same: perform the copy or move to the targeted folder. The call is pretty simple: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;simpleworkflow/{accept|reject}/{store_type}/{store_id}/{id}&lt;/code&gt;. The json or XML that is returned let us know of either the success or the failure of this action. Failures can provide some information on why the failure occurred. A success messages, provides more detail: what action occured — copy or move, which step was taken — returning the name as set in the approveStep or rejectStep properties, the folder that document was moved or copied to. The destination that is returned is the human readable path. (If there is any interest we can update this to return the nodeRef as well as the path.)&lt;/p&gt;
 
 &lt;p&gt;The json returned looks like:&lt;/p&gt;
 
@@ -374,7 +374,7 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;Now this completes the repo side of our extension.  Now we need to work with the values returned on the Share side.  We needr a status indicator so we’ll focus there.&lt;/p&gt;
 
-&lt;p&gt;First we’ll define the evaluator.  We need to add the evaluator to &lt;code class=&quot;highlighter-rouge&quot;&gt;web-extension/custom-slingshot-something-context.xml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;First we’ll define the evaluator.  We need to add the evaluator to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;web-extension/custom-slingshot-something-context.xml&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;bean id=&quot;evaluator.doclib.indicator.custom&quot; parent=&quot;evaluator.doclib.metadata.value&quot;&amp;gt;
       &amp;lt;property name=&quot;accessor&quot; value=&quot;properties.customProperty&quot;/&amp;gt;
@@ -388,7 +388,7 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;It is important to note that the value of the accessor is not the content model property name, but the key value used in our map from the CustomProperty class.&lt;/p&gt;
 
-&lt;p&gt;And finally, we use the evaluator in our indicator config. This is added to our &lt;code class=&quot;highlighter-rouge&quot;&gt;share-config-custom.xml&lt;/code&gt; under the &lt;code class=&quot;highlighter-rouge&quot;&gt;META-INF&lt;/code&gt; in our custom jar file.&lt;/p&gt;
+&lt;p&gt;And finally, we use the evaluator in our indicator config. This is added to our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;share-config-custom.xml&lt;/code&gt; under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;META-INF&lt;/code&gt; in our custom jar file.&lt;/p&gt;
 
 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;config evaluator=&quot;string-compare&quot; condition=&quot;DocumentLibrary&quot;&amp;gt;
 		&amp;lt;indicators&amp;gt;
@@ -443,13 +443,13 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 
 &lt;p&gt;There are a few things that we need to know as we get started. First, when a site is created in Alfresco Share, the content nodes supporting discussions are not created.  Only after a user accesses the discussion component does it get created.&lt;/p&gt;
 
-&lt;p&gt;Second, discussions are created as &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; types.  Posts are added as children of &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; as a &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:post&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Second, discussions are created as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; types.  Posts are added as children of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; as a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fm:post&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;using-a-rule&quot;&gt;&lt;strong&gt;Using a Rule&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;The simplest way to add notifications is as a rule via the Alfresco Explorer client on the discussion space that is created for the site, under the Sites space.  Adding a rule to the disucssions space matching all content items will result on two emails (one for the creation of the topic and one for the first post).  So we  need to be more specific: We need to expose the Forum Post and  Topic types as Subtypes to the rules engine.  You add fm:topic as well if you want to enable delete notifications&lt;/p&gt;
 
-&lt;p&gt;To &lt;code class=&quot;highlighter-rouge&quot;&gt;web-client-config-custom.xml&lt;/code&gt; add&lt;/p&gt;
+&lt;p&gt;To &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;web-client-config-custom.xml&lt;/code&gt; add&lt;/p&gt;
 
 &lt;pre class=&quot;brush: xml; title: ; notranslate&quot; title=&quot;&quot;&gt;&amp;lt;alfresco-config&amp;gt;
     &amp;lt;config evaluator=&quot;string-compare&quot; condition=&quot;Action Wizards&quot;&amp;gt;
@@ -461,7 +461,7 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 &amp;lt;/alfresco-config&amp;gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Topics are the best choice for building rules on.  Notifications on &lt;code class=&quot;highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; will work for create and delete but not update.  The title of a topic is stored on the first post of a discussion.  You can’t delete individual posts but you can delete a Topic so when specifying a delete notification it can be made directly against a topic,but again…it is easier to just do the same using fm:post.&lt;/p&gt;
+&lt;p&gt;Topics are the best choice for building rules on.  Notifications on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fm:topic&lt;/code&gt; will work for create and delete but not update.  The title of a topic is stored on the first post of a discussion.  You can’t delete individual posts but you can delete a Topic so when specifying a delete notification it can be made directly against a topic,but again…it is easier to just do the same using fm:post.&lt;/p&gt;
 
 &lt;p&gt;The notification template would be added to email templates and would look like:&lt;/p&gt;
 
@@ -479,7 +479,7 @@ ${url.serverPath}/share/page/site/${document.parent.parent.parent.properties.nam
 
 &lt;h2 id=&quot;mail-action-sample-for-group-or-individual&quot;&gt;&lt;strong&gt;Mail action sample for group or individual.&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;to_many&lt;/code&gt; paramater currently only supports one group at a time….if you need to send to multiple people or groups, you’ll need to loop over the &lt;code class=&quot;highlighter-rouge&quot;&gt;to_many&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;to&lt;/code&gt; paramaters and execute against each.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;to_many&lt;/code&gt; paramater currently only supports one group at a time….if you need to send to multiple people or groups, you’ll need to loop over the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;to_many&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;to&lt;/code&gt; paramaters and execute against each.&lt;/p&gt;
 
 &lt;pre class=&quot;brush: jscript; title: ; notranslate&quot; title=&quot;&quot;&gt;var siteGroup = &quot;GROUP_site_&quot; + document.parent.parent.parent.name;
 var template = &quot;Data Dictionary/Email Templates/Notify Email Templates/share_discussion_notification.ftl&quot;;
@@ -609,7 +609,7 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 }
 &lt;/pre&gt;
 
-&lt;p&gt;These options should also take into account disabled accounts: (&lt;code class=&quot;highlighter-rouge&quot;&gt;person.isAccountEnabled(userName);&lt;/code&gt; The problem with this is that &lt;code class=&quot;highlighter-rouge&quot;&gt;isAccountEnables&lt;/code&gt; requires admin privileges.  There is no runAs for this kind of javascript so implementing this would require implementing the action in Java, which is outside the scope of this exercise.&lt;/p&gt;
+&lt;p&gt;These options should also take into account disabled accounts: (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;person.isAccountEnabled(userName);&lt;/code&gt; The problem with this is that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isAccountEnables&lt;/code&gt; requires admin privileges.  There is no runAs for this kind of javascript so implementing this would require implementing the action in Java, which is outside the scope of this exercise.&lt;/p&gt;
 
 &lt;p&gt;Hopefully, I’ve given you some ideas of ways to approach adding discussion notifications.  The key here in discovering how to approach this was knowing where to look at how discussions are stored in the repository.  In fact this is the key for most any extension to Alfresco:  Asking yourself how does this work for this feature, which is similar to what I need, work in Alfresco? Understanding how this is pulled together from looking at the content model, looking at actual content/nodes through the node browser, understanding the relationships between nodes: parent/child and peer and sometimes digging into the source code can help to expand your understanding when looking to extend Alfresco.&lt;/p&gt;
 
@@ -889,7 +889,7 @@ return user; &lt;/pre&gt;
 
 &lt;p&gt;The first web script returns all of the permissions for a specified node.&lt;/p&gt;
 
-&lt;p&gt;The URL used is &lt;code class=&quot;highlighter-rouge&quot;&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The URL used is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Where&lt;/p&gt;
 
@@ -931,7 +931,7 @@ return user; &lt;/pre&gt;
 
 &lt;p&gt;This web script enables you to modify the permissions for a given node&lt;/p&gt;
 
-&lt;p&gt;It is called through the same URL as the above web script but as a POST instead of a get: &lt;code class=&quot;highlighter-rouge&quot;&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It is called through the same URL as the above web script but as a POST instead of a get: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/alfresco/service/permissions/{store_type}/{store_id}/{id}&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Again, if the node is not found a 404 error will be returned, any missing URI parameters will result in a 400 error and if you don’t have permission to modify the node, you will get a 401 error.&lt;/p&gt;
 
@@ -1014,14 +1014,14 @@ return user; &lt;/pre&gt;
   &lt;code&gt;java -jar jmxterm-1.0-alpha-4-uber.jar&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Next, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt; command connect to Alfresco&lt;/p&gt;
+&lt;p&gt;Next, using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;open&lt;/code&gt; command connect to Alfresco&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;open service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u \ controlRole&amp;lt;br /&amp;gt;
 #Connection to service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi is opened&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Or, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;jvms&lt;/code&gt; command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).&lt;/p&gt;
+&lt;p&gt;Or, using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jvms&lt;/code&gt; command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;jvms&amp;lt;br /&amp;gt;
@@ -1029,7 +1029,7 @@ return user; &lt;/pre&gt;
 13157    (m) - org.apache.catalina.startup.Bootstrap start&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;And once again use the &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt; command to connect&lt;/p&gt;
+&lt;p&gt;And once again use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;open&lt;/code&gt; command to connect&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;open 13157 -u controlRole -p change_asap&amp;lt;br /&amp;gt;
@@ -1055,21 +1055,21 @@ java.util.logging&amp;lt;br /&amp;gt;
 log4j&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;The bean you need is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Alfresco&lt;/code&gt; domain&lt;/p&gt;
+&lt;p&gt;The bean you need is in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Alfresco&lt;/code&gt; domain&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;domain Alfresco&amp;lt;br /&amp;gt;
 #domain is set to Alfresco&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;You can look up the beans within the domain by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;beans&lt;/code&gt; command.  There are quite a few beans in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Alfresco&lt;/code&gt; domain, so let’s connect directly to the one that you need: &lt;code class=&quot;highlighter-rouge&quot;&gt;RepoServerMgmt&lt;/code&gt;. (Don’t forget jmxterm support auto completion.)&lt;/p&gt;
+&lt;p&gt;You can look up the beans within the domain by using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beans&lt;/code&gt; command.  There are quite a few beans in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Alfresco&lt;/code&gt; domain, so let’s connect directly to the one that you need: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RepoServerMgmt&lt;/code&gt;. (Don’t forget jmxterm support auto completion.)&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;bean Alfresco:Name=RepoServerMgmt&amp;lt;br /&amp;gt;
 #bean is set to Alfresco:Name=RepoServerMgmt&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Now that you have the bean, you can now find out what it does by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; command&lt;/p&gt;
+&lt;p&gt;Now that you have the bean, you can now find out what it does by using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;info&lt;/code&gt; command&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;info&amp;lt;br /&amp;gt;
@@ -1121,7 +1121,7 @@ UserCountNonExpired = 2;&lt;/code&gt;
 
 &lt;p&gt;So you have 2 user currently in Alfresco: System and admin&lt;/p&gt;
 
-&lt;p&gt;Let’s log out the admin user.  (Look back at the list from the &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)&lt;/p&gt;
+&lt;p&gt;Let’s log out the admin user.  (Look back at the list from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;info&lt;/code&gt; command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)&lt;/p&gt;
 
 &lt;p style=&quot;padding-left: 30px&quot;&gt;
   &lt;code&gt;$&amp;gt;run invalidateUser admin&amp;lt;br /&amp;gt;
@@ -1130,7 +1130,7 @@ UserCountNonExpired = 2;&lt;/code&gt;
 null&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Remember that this operation does not return anything so jmxterm returns &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Remember that this operation does not return anything so jmxterm returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Let’s now check and see if the admin user is still logged in.&lt;/p&gt;
 
@@ -1153,9 +1153,9 @@ null&lt;/code&gt;
   &lt;code&gt;$ echo get -s -b Alfresco:Name=RepoServerMgmt ReadOnly | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a &lt;code class=&quot;highlighter-rouge&quot;&gt;-s&lt;/code&gt; since we just want the value and not the full expression (&lt;code class=&quot;highlighter-rouge&quot;&gt;ReadOnly = &amp;lt;value&amp;gt;;&lt;/code&gt;) returned &lt;code class=&quot;highlighter-rouge&quot;&gt;-b&lt;/code&gt; names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.&lt;/p&gt;
+&lt;p&gt;When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-s&lt;/code&gt; since we just want the value and not the full expression (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadOnly = &amp;lt;value&amp;gt;;&lt;/code&gt;) returned &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-b&lt;/code&gt; names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.&lt;/p&gt;
 
-&lt;p&gt;In this case the command returns the value &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;. So the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; — Alfresco is in Read/Write mode.&lt;/p&gt;
+&lt;p&gt;In this case the command returns the value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;. So the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; — Alfresco is in Read/Write mode.&lt;/p&gt;
 
 &lt;p&gt;Now let’s put it in ReadOnly mode&lt;/p&gt;
 
@@ -1163,7 +1163,7 @@ null&lt;/code&gt;
   &lt;code&gt;$ echo set -b Alfresco:Category=sysAdmin,Type=Configuration,id1=default server.transaction.allow-writes false | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n&lt;/code&gt;
 &lt;/p&gt;
 
-&lt;p&gt;This follow pretty much the same pattern.  The &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; attribute is a read only property, so to change Alfresco into Read Only mode you set the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on &lt;code class=&quot;highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This follow pretty much the same pattern.  The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; attribute is a read only property, so to change Alfresco into Read Only mode you set the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-jmx-from-the-command-line&quot;&gt;Alfresco: JMX from the command line&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on August 03, 2010.&lt;/p&gt;</content>
@@ -1210,9 +1210,9 @@ null&lt;/code&gt;
 
 &lt;p&gt;Adding the method implemented by the interface&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;`&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;pre style=&quot;padding-left: 30px&quot;&gt;public void afterCreateVersion(

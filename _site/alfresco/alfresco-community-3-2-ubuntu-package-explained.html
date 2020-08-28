@@ -139,7 +139,7 @@
 
 <p>The alfresco-community package is located in the Ubuntu partner repository.  <em>These instructions assume that you are using the command line.</em> You can also use an X-Windows desktop to install alfresco.  If you do, some of the steps are a bit different, but the general outline can be grasped from these instructions. So let’s start…</p>
 
-<p>You can add the partner repository by editing <code class="highlighter-rouge">/etc/apt/sources.list</code>. You need to uncomment the partner repo:</p>
+<p>You can add the partner repository by editing <code class="language-plaintext highlighter-rouge">/etc/apt/sources.list</code>. You need to uncomment the partner repo:</p>
 
 <p><span style="font-family: monospace, 'Times New Roman', 'Bitstream Charter', Times, fantasy">deb http://archive.canonical.com/ubuntu jaunty partner<br /> deb-src http://archive.canonical.com/ubuntu jaunty partner</span></p>
 
@@ -157,23 +157,23 @@
 
 <p>You will be prompted to enter the mysql admin password, to accept the Sun Java license, configure the alfresco database username and password (the default is to choose alfresco/alfresco), allow for the automatic configuration of tomcat.</p>
 
-<p>Once complete, <a href="http://wiki.alfresco.com/wiki/Alfresco_Explorer">Alfresco Explorer</a> and <a href="http://wiki.alfresco.com/wiki/Alfresco_Share">Alfresco Share</a> will be available by pointing your browser to <code class="highlighter-rouge">http://&lt;IP Adresses or DNS Name&gt;:8080/alfresco</code> or <code class="highlighter-rouge">http://&lt;IP Adresses or DNS Name&gt;:8080/share</code></p>
+<p>Once complete, <a href="http://wiki.alfresco.com/wiki/Alfresco_Explorer">Alfresco Explorer</a> and <a href="http://wiki.alfresco.com/wiki/Alfresco_Share">Alfresco Share</a> will be available by pointing your browser to <code class="language-plaintext highlighter-rouge">http://&lt;IP Adresses or DNS Name&gt;:8080/alfresco</code> or <code class="language-plaintext highlighter-rouge">http://&lt;IP Adresses or DNS Name&gt;:8080/share</code></p>
 
 <p><strong>Where does everything get put?</strong></p>
 
-<p>Using one of the default linux installs from <a href="http://www.alfresco.com">www.alfresco.com</a>, you will typically find alfresco installed under <code class="highlighter-rouge">/opt/alfresco</code>.  By using the default tomcat, shipped with ubuntu, we followed its directory/configuration structure.</p>
+<p>Using one of the default linux installs from <a href="http://www.alfresco.com">www.alfresco.com</a>, you will typically find alfresco installed under <code class="language-plaintext highlighter-rouge">/opt/alfresco</code>.  By using the default tomcat, shipped with ubuntu, we followed its directory/configuration structure.</p>
 
 <ul>
-  <li><strong>Alfresco indexes and contentstore:</strong> The Alfresco indexes and contentstore can be found under <code class="highlighter-rouge">/var/lib/alfresco</code></li>
-  <li><strong>Alfresco war files:</strong> The alfresco and share war files can be found under <code class="highlighter-rouge">/var/lib/tomcat6/webapps</code></li>
-  <li><strong>Alfresco extension directories:</strong> The extension directory, where you should make configuration changes to alfresco and share, can be found under <code class="highlighter-rouge">/var/lib/tomcat6/shared</code></li>
-  <li><strong>Alfresco log files:</strong> The alfresco log files can be found under <code class="highlighter-rouge">/var/log/tomcat6</code>
-Many of these directories are symbolic links to directories under <code class="highlighter-rouge">/usr/share/tomcat6</code>. However, the default tomcat configuration points to the <code class="highlighter-rouge">/var/lib/tomcat6</code> directory.</li>
+  <li><strong>Alfresco indexes and contentstore:</strong> The Alfresco indexes and contentstore can be found under <code class="language-plaintext highlighter-rouge">/var/lib/alfresco</code></li>
+  <li><strong>Alfresco war files:</strong> The alfresco and share war files can be found under <code class="language-plaintext highlighter-rouge">/var/lib/tomcat6/webapps</code></li>
+  <li><strong>Alfresco extension directories:</strong> The extension directory, where you should make configuration changes to alfresco and share, can be found under <code class="language-plaintext highlighter-rouge">/var/lib/tomcat6/shared</code></li>
+  <li><strong>Alfresco log files:</strong> The alfresco log files can be found under <code class="language-plaintext highlighter-rouge">/var/log/tomcat6</code>
+Many of these directories are symbolic links to directories under <code class="language-plaintext highlighter-rouge">/usr/share/tomcat6</code>. However, the default tomcat configuration points to the <code class="language-plaintext highlighter-rouge">/var/lib/tomcat6</code> directory.</li>
 </ul>
 
-<p>By using the default tomcat we gain the advantage of an out of the box init script to control start and stop of Alfresco.  You can now use <code class="highlighter-rouge">/etc/init.d/tomcat start|stop|restart|try-restart|force-reload|status</code> to control or check the status of  the tomcat server.</p>
+<p>By using the default tomcat we gain the advantage of an out of the box init script to control start and stop of Alfresco.  You can now use <code class="language-plaintext highlighter-rouge">/etc/init.d/tomcat start|stop|restart|try-restart|force-reload|status</code> to control or check the status of  the tomcat server.</p>
 
-<p>To change the startup parameters of tomcat or those of Alfresco, (ie. memory settings, configuring JMX, etc.) modify the JAVA_OPTS variable in <code class="highlighter-rouge">/etc/default/tomcat6</code>.</p>
+<p>To change the startup parameters of tomcat or those of Alfresco, (ie. memory settings, configuring JMX, etc.) modify the JAVA_OPTS variable in <code class="language-plaintext highlighter-rouge">/etc/default/tomcat6</code>.</p>
 
 <p>Tomcat is run using a non-root user.  This means that Alfresco cannot open the ports needed for CIFS, FTP, or NFS. Follow the <a href="http://wiki.alfresco.com/wiki/File_Server_Configuration#Running_SMB.2FCIFS_from_a_normal_user_account">instructions to configure alfresco and iptables</a> to listen on non-standard ports and perform port forwarding. (Look at <a href="http://www.davidbaker.cc/">David Baker’s blog</a> for <a href="http://www.davidbaker.cc/?q=node/3">step by step instructions on how to configure Alfresco CIFs with port forwarding using iptables</a>.) The same use of non standard ports and iptables configurations should be applied to inbound <a href="http://wiki.alfresco.com/wiki/Inbound_Email_Server_Configuration">SMTP</a> and <a href="http://wiki.alfresco.com/wiki/IMAP">IMAP</a> configurations.</p>
 

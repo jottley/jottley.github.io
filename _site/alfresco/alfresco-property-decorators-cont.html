@@ -124,7 +124,7 @@
     <div class="article-wrap" itemprop="text">
       <p>In my post on <a href="http://jared.ottleys.net/alfresco/alfresco-property-decorators" title="Alfresco: Property Decorators">Property Decorators</a> I pointed out that there was an <a href="https://issues.alfresco.com/jira/browse/ALF-13038">issue</a> adding a customer property decorator: you couldn’t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well <a href="http://twitter.com/#!/mikehatfield">Mike Hatfield</a> has found a solution which is just awesome: <a href="http://forum.springsource.org/showthread.php?53358-Simple-merge-of-util-map">Map Merge</a>.
 <br /><br />
-It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the <code class="highlighter-rouge">applicationScriptUtils</code> bean. Add a single property of <code class="highlighter-rouge">decoratedProperties</code> and define a map in the property. When you define the map add the attribute <code class="highlighter-rouge">merge="true"</code>. Finally, add your custom property to decorator bean mappings. Done!</p>
+It is possible to merge maps of a child bean to a parent bean. Here is how it is done: Create a new bean, where the parent is the <code class="language-plaintext highlighter-rouge">applicationScriptUtils</code> bean. Add a single property of <code class="language-plaintext highlighter-rouge">decoratedProperties</code> and define a map in the property. When you define the map add the attribute <code class="language-plaintext highlighter-rouge">merge="true"</code>. Finally, add your custom property to decorator bean mappings. Done!</p>
 
 <p>Here is an example:</p>
 

@@ -144,14 +144,14 @@
   <code>java -jar jmxterm-1.0-alpha-4-uber.jar</code>
 </p>
 
-<p>Next, using the <code class="highlighter-rouge">open</code> command connect to Alfresco</p>
+<p>Next, using the <code class="language-plaintext highlighter-rouge">open</code> command connect to Alfresco</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;open service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u \ controlRole&lt;br /&gt;
 #Connection to service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi is opened</code>
 </p>
 
-<p>Or, using the <code class="highlighter-rouge">jvms</code> command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).</p>
+<p>Or, using the <code class="language-plaintext highlighter-rouge">jvms</code> command (with the appropriate user permissions you can list the running java processes on the machine jmxterm is running on).</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;jvms&lt;br /&gt;
@@ -159,7 +159,7 @@
 13157    (m) - org.apache.catalina.startup.Bootstrap start</code>
 </p>
 
-<p>And once again use the <code class="highlighter-rouge">open</code> command to connect</p>
+<p>And once again use the <code class="language-plaintext highlighter-rouge">open</code> command to connect</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;open 13157 -u controlRole -p change_asap&lt;br /&gt;
@@ -185,21 +185,21 @@ java.util.logging&lt;br /&gt;
 log4j</code>
 </p>
 
-<p>The bean you need is in the <code class="highlighter-rouge">Alfresco</code> domain</p>
+<p>The bean you need is in the <code class="language-plaintext highlighter-rouge">Alfresco</code> domain</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;domain Alfresco&lt;br /&gt;
 #domain is set to Alfresco</code>
 </p>
 
-<p>You can look up the beans within the domain by using the <code class="highlighter-rouge">beans</code> command.  There are quite a few beans in the <code class="highlighter-rouge">Alfresco</code> domain, so let’s connect directly to the one that you need: <code class="highlighter-rouge">RepoServerMgmt</code>. (Don’t forget jmxterm support auto completion.)</p>
+<p>You can look up the beans within the domain by using the <code class="language-plaintext highlighter-rouge">beans</code> command.  There are quite a few beans in the <code class="language-plaintext highlighter-rouge">Alfresco</code> domain, so let’s connect directly to the one that you need: <code class="language-plaintext highlighter-rouge">RepoServerMgmt</code>. (Don’t forget jmxterm support auto completion.)</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;bean Alfresco:Name=RepoServerMgmt&lt;br /&gt;
 #bean is set to Alfresco:Name=RepoServerMgmt</code>
 </p>
 
-<p>Now that you have the bean, you can now find out what it does by using the <code class="highlighter-rouge">info</code> command</p>
+<p>Now that you have the bean, you can now find out what it does by using the <code class="language-plaintext highlighter-rouge">info</code> command</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;info&lt;br /&gt;
@@ -251,7 +251,7 @@ UserCountNonExpired = 2;</code>
 
 <p>So you have 2 user currently in Alfresco: System and admin</p>
 
-<p>Let’s log out the admin user.  (Look back at the list from the <code class="highlighter-rouge">info</code> command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)</p>
+<p>Let’s log out the admin user.  (Look back at the list from the <code class="language-plaintext highlighter-rouge">info</code> command.) You can either invalidate all of the authenticated users tickets or we can invalidate named user.  Since you just want to remove one user let’s invalidate the admin users session.  (The System user is a special account, so you will ignore it.)</p>
 
 <p style="padding-left: 30px">
   <code>$&gt;run invalidateUser admin&lt;br /&gt;
@@ -260,7 +260,7 @@ UserCountNonExpired = 2;</code>
 null</code>
 </p>
 
-<p>Remember that this operation does not return anything so jmxterm returns <code class="highlighter-rouge">null</code>.</p>
+<p>Remember that this operation does not return anything so jmxterm returns <code class="language-plaintext highlighter-rouge">null</code>.</p>
 
 <p>Let’s now check and see if the admin user is still logged in.</p>
 
@@ -283,9 +283,9 @@ null</code>
   <code>$ echo get -s -b Alfresco:Name=RepoServerMgmt ReadOnly | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n</code>
 </p>
 
-<p>When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a <code class="highlighter-rouge">-s</code> since we just want the value and not the full expression (<code class="highlighter-rouge">ReadOnly = &lt;value&gt;;</code>) returned <code class="highlighter-rouge">-b</code> names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.</p>
+<p>When passing commands to jmxterm, you need to echo the command into the interpreter. So the above command passes the jmxterm get command.  we pass it a <code class="language-plaintext highlighter-rouge">-s</code> since we just want the value and not the full expression (<code class="language-plaintext highlighter-rouge">ReadOnly = &lt;value&gt;;</code>) returned <code class="language-plaintext highlighter-rouge">-b</code> names the bean and finally the attribute we are querying. On the jmxterm side we pass the connection information (connection string or PID, username and password), set the verbosity of the execution, and tell it that it should run in non-interactive mode.</p>
 
-<p>In this case the command returns the value <code class="highlighter-rouge">false</code>. So the value of <code class="highlighter-rouge">ReadOnly</code> is <code class="highlighter-rouge">false</code> — Alfresco is in Read/Write mode.</p>
+<p>In this case the command returns the value <code class="language-plaintext highlighter-rouge">false</code>. So the value of <code class="language-plaintext highlighter-rouge">ReadOnly</code> is <code class="language-plaintext highlighter-rouge">false</code> — Alfresco is in Read/Write mode.</p>
 
 <p>Now let’s put it in ReadOnly mode</p>
 
@@ -293,7 +293,7 @@ null</code>
   <code>$ echo set -b Alfresco:Category=sysAdmin,Type=Configuration,id1=default server.transaction.allow-writes false | java -jar jmxterm-1.0-alpha-4-uber.jar -l service:jmx:rmi:///jndi/rmi://localhost:50500/alfresco/jmxrmi -p change_asap -u controlRole -v silent -n</code>
 </p>
 
-<p>This follow pretty much the same pattern.  The <code class="highlighter-rouge">ReadOnly</code> attribute is a read only property, so to change Alfresco into Read Only mode you set the value of <code class="highlighter-rouge">server.transaction.allow-writes</code> to <code class="highlighter-rouge">false</code>. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on <code class="highlighter-rouge">server.transaction.allow-writes</code> to <code class="highlighter-rouge">true</code>.</p>
+<p>This follow pretty much the same pattern.  The <code class="language-plaintext highlighter-rouge">ReadOnly</code> attribute is a read only property, so to change Alfresco into Read Only mode you set the value of <code class="language-plaintext highlighter-rouge">server.transaction.allow-writes</code> to <code class="language-plaintext highlighter-rouge">false</code>. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on <code class="language-plaintext highlighter-rouge">server.transaction.allow-writes</code> to <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
 
       <hr />

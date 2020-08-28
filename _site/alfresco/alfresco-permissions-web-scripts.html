@@ -130,7 +130,7 @@
 
 <p>The first web script returns all of the permissions for a specified node.</p>
 
-<p>The URL used is <code class="highlighter-rouge">/alfresco/service/permissions/{store_type}/{store_id}/{id}</code></p>
+<p>The URL used is <code class="language-plaintext highlighter-rouge">/alfresco/service/permissions/{store_type}/{store_id}/{id}</code></p>
 
 <p>Where</p>
 
@@ -172,7 +172,7 @@
 
 <p>This web script enables you to modify the permissions for a given node</p>
 
-<p>It is called through the same URL as the above web script but as a POST instead of a get: <code class="highlighter-rouge">/alfresco/service/permissions/{store_type}/{store_id}/{id}</code></p>
+<p>It is called through the same URL as the above web script but as a POST instead of a get: <code class="language-plaintext highlighter-rouge">/alfresco/service/permissions/{store_type}/{store_id}/{id}</code></p>
 
 <p>Again, if the node is not found a 404 error will be returned, any missing URI parameters will result in a 400 error and if you don’t have permission to modify the node, you will get a 401 error.</p>
 

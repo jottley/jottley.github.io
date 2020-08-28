@@ -128,15 +128,15 @@
 
 <h2 id="ssh-tunneling-for-debugging">SSH Tunneling for Debugging</h2>
 
-<p>First configure Alfresco/Tomcat to listen for debug connections as per usual.  Add the following to your <code class="highlighter-rouge">alfresco.sh</code> file:</p>
+<p>First configure Alfresco/Tomcat to listen for debug connections as per usual.  Add the following to your <code class="language-plaintext highlighter-rouge">alfresco.sh</code> file:</p>
 
-<p><code class="highlighter-rouge">export JAVA_OPTS="${JAVA_OPTS} -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8082"</code></p>
+<p><code class="language-plaintext highlighter-rouge">export JAVA_OPTS="${JAVA_OPTS} -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8082"</code></p>
 
-<p>The <code class="highlighter-rouge">address</code> parameter sets the port you want the debugger to listen on.  Adding this line, will require you to restart Alfresco/tomcat for it to become active.</p>
+<p>The <code class="language-plaintext highlighter-rouge">address</code> parameter sets the port you want the debugger to listen on.  Adding this line, will require you to restart Alfresco/tomcat for it to become active.</p>
 
 <p>Next, standard port forwarding with ssh should enable Java debugging:</p>
 
-<p><code class="highlighter-rouge">ssh -i path/to/your.pem -f root@yourhost.com -L 2000:localhost:8082 -N</code></p>
+<p><code class="language-plaintext highlighter-rouge">ssh -i path/to/your.pem -f root@yourhost.com -L 2000:localhost:8082 -N</code></p>
 
 <p>In this example we are using the following options:</p>
 
@@ -160,7 +160,7 @@
   <strong><code>-N</code></strong> tells ssh to not execute a command upon connection
 </p>
 
-<p>Next we need to connect the debugger.  This example gives instructions for Eclipse.  Configure the debugger using the Remote Java Application option. Accept the default Connection Type: <code class="highlighter-rouge">Standard (Socket Attach)</code>, but for the Connection Properties enter <code class="highlighter-rouge">localhost</code> for the Host and the port number from the first parameter in the <code class="highlighter-rouge">-L</code> switch for Port.  In our example port <code class="highlighter-rouge">2000</code>.</p>
+<p>Next we need to connect the debugger.  This example gives instructions for Eclipse.  Configure the debugger using the Remote Java Application option. Accept the default Connection Type: <code class="language-plaintext highlighter-rouge">Standard (Socket Attach)</code>, but for the Connection Properties enter <code class="language-plaintext highlighter-rouge">localhost</code> for the Host and the port number from the first parameter in the <code class="language-plaintext highlighter-rouge">-L</code> switch for Port.  In our example port <code class="language-plaintext highlighter-rouge">2000</code>.</p>
 
 <div id="attachment_276" style="width: 387px" class="wp-caption aligncenter">
   <img class="size-full wp-image-276 " src="http://jared.ottleys.net/files/2010/02/dhnsnn76_21dt9jhkc7_b.png" alt="Eclipse Debugger" width="377" height="170" /><p class="wp-caption-text">
@@ -174,17 +174,17 @@
 
 <p>This configuration is a bit more complex due to how RMI works.</p>
 
-<p>First, you will need to add the following line to your <code class="highlighter-rouge">alfresco.sh</code> file (Restart required to turn in on):</p>
+<p>First, you will need to add the following line to your <code class="language-plaintext highlighter-rouge">alfresco.sh</code> file (Restart required to turn in on):</p>
 
-<p><code class="highlighter-rouge">export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote=true -Djava.rmi.server.hostname=dummyhost"</code></p>
+<p><code class="language-plaintext highlighter-rouge">export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote=true -Djava.rmi.server.hostname=dummyhost"</code></p>
 
-<p>You may already see the <code class="highlighter-rouge">-Dcom.sun.management.jmxremote</code> line in the file, if so just add <code class="highlighter-rouge">=true</code> to it.  This is important as I’ve had difficulty attaching with out this set to true (even though the default value of that option, with out declaring the value is true).</p>
+<p>You may already see the <code class="language-plaintext highlighter-rouge">-Dcom.sun.management.jmxremote</code> line in the file, if so just add <code class="language-plaintext highlighter-rouge">=true</code> to it.  This is important as I’ve had difficulty attaching with out this set to true (even though the default value of that option, with out declaring the value is true).</p>
 
-<p>The <code class="highlighter-rouge">-Djava.rmi.server.hostname=dummyhost</code> option is needed to help RMI know where to connect.  RMI connects in a two part process.  First by connecting to the RMI server registry, which pushes your request to the JMX service which is dynamically allocated on the first open port available to it at start up time. Dynamic ports don’t give us the consistence we need so we will want to configure Alfresco to use a static port. Also, this second connection requires us to use/set a hostname to connect, otherwise it will return an IP address, which in the case of EC2 is non-routable.</p>
+<p>The <code class="language-plaintext highlighter-rouge">-Djava.rmi.server.hostname=dummyhost</code> option is needed to help RMI know where to connect.  RMI connects in a two part process.  First by connecting to the RMI server registry, which pushes your request to the JMX service which is dynamically allocated on the first open port available to it at start up time. Dynamic ports don’t give us the consistence we need so we will want to configure Alfresco to use a static port. Also, this second connection requires us to use/set a hostname to connect, otherwise it will return an IP address, which in the case of EC2 is non-routable.</p>
 
-<p>Let’s create a new context file under the <code class="highlighter-rouge">extension</code> directory (<code class="highlighter-rouge">tomcat/shared/classes/alfresco/extension</code>) and call it <code class="highlighter-rouge">custom-core-services-context.xml</code>.  In that file we will add the following:</p>
+<p>Let’s create a new context file under the <code class="language-plaintext highlighter-rouge">extension</code> directory (<code class="language-plaintext highlighter-rouge">tomcat/shared/classes/alfresco/extension</code>) and call it <code class="language-plaintext highlighter-rouge">custom-core-services-context.xml</code>.  In that file we will add the following:</p>
 
-<p>`<?xml version='1.0' encoding='UTF-8'?><br />
+<p>`&lt;?xml version=’1.0’ encoding=’UTF-8’?&gt;<br />
 &lt;!DOCTYPE beans PUBLIC ‘-//SPRING//DTD BEAN//EN’ ‘http://www.springframework.org/dtd/spring-beans.dtd’&gt;&lt;/p&gt;</p>
 <p><beans>&lt;/p&gt;
 <p><!-- MBeanServer Connector Override (registers itself with custom alfrescoMBeanServer) --><br />

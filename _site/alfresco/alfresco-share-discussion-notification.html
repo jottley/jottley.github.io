@@ -148,13 +148,13 @@
 
 <p>There are a few things that we need to know as we get started. First, when a site is created in Alfresco Share, the content nodes supporting discussions are not created.  Only after a user accesses the discussion component does it get created.</p>
 
-<p>Second, discussions are created as <code class="highlighter-rouge">fm:topic</code> types.  Posts are added as children of <code class="highlighter-rouge">fm:topic</code> as a <code class="highlighter-rouge">fm:post</code>.</p>
+<p>Second, discussions are created as <code class="language-plaintext highlighter-rouge">fm:topic</code> types.  Posts are added as children of <code class="language-plaintext highlighter-rouge">fm:topic</code> as a <code class="language-plaintext highlighter-rouge">fm:post</code>.</p>
 
 <h2 id="using-a-rule"><strong>Using a Rule</strong></h2>
 
 <p>The simplest way to add notifications is as a rule via the Alfresco Explorer client on the discussion space that is created for the site, under the Sites space.  Adding a rule to the disucssions space matching all content items will result on two emails (one for the creation of the topic and one for the first post).  So we  need to be more specific: We need to expose the Forum Post and  Topic types as Subtypes to the rules engine.  You add fm:topic as well if you want to enable delete notifications</p>
 
-<p>To <code class="highlighter-rouge">web-client-config-custom.xml</code> add</p>
+<p>To <code class="language-plaintext highlighter-rouge">web-client-config-custom.xml</code> add</p>
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;alfresco-config&gt;
     &lt;config evaluator="string-compare" condition="Action Wizards"&gt;
@@ -166,7 +166,7 @@
 &lt;/alfresco-config&gt;
 </pre>
 
-<p>Topics are the best choice for building rules on.  Notifications on <code class="highlighter-rouge">fm:topic</code> will work for create and delete but not update.  The title of a topic is stored on the first post of a discussion.  You can’t delete individual posts but you can delete a Topic so when specifying a delete notification it can be made directly against a topic,but again…it is easier to just do the same using fm:post.</p>
+<p>Topics are the best choice for building rules on.  Notifications on <code class="language-plaintext highlighter-rouge">fm:topic</code> will work for create and delete but not update.  The title of a topic is stored on the first post of a discussion.  You can’t delete individual posts but you can delete a Topic so when specifying a delete notification it can be made directly against a topic,but again…it is easier to just do the same using fm:post.</p>
 
 <p>The notification template would be added to email templates and would look like:</p>
 
@@ -184,7 +184,7 @@ ${url.serverPath}/share/page/site/${document.parent.parent.parent.properties.nam
 
 <h2 id="mail-action-sample-for-group-or-individual"><strong>Mail action sample for group or individual.</strong></h2>
 
-<p>The <code class="highlighter-rouge">to_many</code> paramater currently only supports one group at a time….if you need to send to multiple people or groups, you’ll need to loop over the <code class="highlighter-rouge">to_many</code> or <code class="highlighter-rouge">to</code> paramaters and execute against each.</p>
+<p>The <code class="language-plaintext highlighter-rouge">to_many</code> paramater currently only supports one group at a time….if you need to send to multiple people or groups, you’ll need to loop over the <code class="language-plaintext highlighter-rouge">to_many</code> or <code class="language-plaintext highlighter-rouge">to</code> paramaters and execute against each.</p>
 
 <pre class="brush: jscript; title: ; notranslate" title="">var siteGroup = "GROUP_site_" + document.parent.parent.parent.name;
 var template = "Data Dictionary/Email Templates/Notify Email Templates/share_discussion_notification.ftl";
@@ -314,7 +314,7 @@ if (document.parent.hasAspect("n:notifiable") {
 }
 </pre>
 
-<p>These options should also take into account disabled accounts: (<code class="highlighter-rouge">person.isAccountEnabled(userName);</code> The problem with this is that <code class="highlighter-rouge">isAccountEnables</code> requires admin privileges.  There is no runAs for this kind of javascript so implementing this would require implementing the action in Java, which is outside the scope of this exercise.</p>
+<p>These options should also take into account disabled accounts: (<code class="language-plaintext highlighter-rouge">person.isAccountEnabled(userName);</code> The problem with this is that <code class="language-plaintext highlighter-rouge">isAccountEnables</code> requires admin privileges.  There is no runAs for this kind of javascript so implementing this would require implementing the action in Java, which is outside the scope of this exercise.</p>
 
 <p>Hopefully, I’ve given you some ideas of ways to approach adding discussion notifications.  The key here in discovering how to approach this was knowing where to look at how discussions are stored in the repository.  In fact this is the key for most any extension to Alfresco:  Asking yourself how does this work for this feature, which is similar to what I need, work in Alfresco? Understanding how this is pulled together from looking at the content model, looking at actual content/nodes through the node browser, understanding the relationships between nodes: parent/child and peer and sometimes digging into the source code can help to expand your understanding when looking to extend Alfresco.</p>
 
