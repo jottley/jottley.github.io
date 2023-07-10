@@ -8,7 +8,7 @@ url:              https://jared.ottleys.net
 owner:
   name:           Jared Ottley
   avatar:         photo.JPG
-  bio:            "Jared Ottley is a Tech Lead Engineer and Salesforce SME at <a href='http://www.alfresco.com'>Alfresco</a>.  To wind down he coaches lacrosse Springville High School. As the father of 6 he is raising a geek army. He has a degree in Political Science and drives a Mini."
+  bio:            "Jared Ottley is an Engineer at <a href='http://www.hyland.com'>Hyland</a> working on the Alfresco Platform.  To wind down he coaches lacrosse Springville High School. He is the proud father of 6."
   email:          jared@ottleys.net
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
@@ -17,9 +17,8 @@ owner:
   github:         jottley
   linkedin:       jottley
   instagram:      jaredrottley
-  lastfm:         user/jottley
+  #lastfm:         user/jottley
   flickr:         jottley
-  tumblr:
   # For Google Authorship https://plus.google.com/authorship
   #google_plus:    https://plus.google.com/u/0/116380333940951424604/posts
 
