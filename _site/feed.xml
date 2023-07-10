@@ -3,26 +3,26 @@
 <title type="text">I exist as I am</title>
 <subtitle type="text">Do not go where the path may lead, go instead where there is no path and leave a trail. --Ralph Waldo Emerson</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2023-07-09T19:02:47-06:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="https://jared.ottleys.net/feed.xml" />
+<link rel="alternate" type="text/html" href="https://jared.ottleys.net" />
+<updated>2023-07-09T19:21:08-06:00</updated>
+<id>https://jared.ottleys.net/</id>
 <author>
   <name>Jared Ottley</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>https://jared.ottleys.net/</uri>
   <email>jared@ottleys.net</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco&#58; CMIS Browser Binding DELETE example]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-cmis-browser-binding-delete" />
-  <id>http://localhost:4000/alfresco/alfresco-cmis-browser-binding-delete</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete</id>
   <published>2014-04-14T00:00:00-06:00</published>
   <updated>2014-04-14T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;I’m in the midst of rewriting a CMIS client. We are moving from CMIS 1.0 atompub bindings to CMIS 1.1 browser bindings. I’ve worked out how to do a DELETE and wanted to document an example that others could extrapolate from.
@@ -69,19 +69,19 @@ With the atompub binding we made a delete using the HTTP DELETE method. With the
 And response codes for Errors? You still see a 401 when a user needs to authenticate and a 404 if the object can’t be found. All other errors that I saw came back as 409s. This includes locked documents and attempting to delete folders containing children. If you receive a 409 result there are two json values you can look at to find the reason for the error: exception (the short description) and message (a fuller description of the error).&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-cmis-browser-binding-delete&quot;&gt;Alfresco&#58; CMIS Browser Binding DELETE example&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on April 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-cmis-browser-binding-delete&quot;&gt;Alfresco&#58; CMIS Browser Binding DELETE example&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on April 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Property Decorators &#8212; cont.]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-property-decorators-cont" />
-  <id>http://localhost:4000/alfresco/alfresco-property-decorators-cont</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-property-decorators-cont" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-property-decorators-cont</id>
   <published>2012-04-02T00:00:00-06:00</published>
   <updated>2012-04-02T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;In my post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-property-decorators&quot; title=&quot;Alfresco: Property Decorators&quot;&gt;Property Decorators&lt;/a&gt; I pointed out that there was an &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-13038&quot;&gt;issue&lt;/a&gt; adding a customer property decorator: you couldn’t create a custom bean to perform the mapping and had to overwrite the out of the box bean. Well &lt;a href=&quot;http://twitter.com/#!/mikehatfield&quot;&gt;Mike Hatfield&lt;/a&gt; has found a solution which is just awesome: &lt;a href=&quot;http://forum.springsource.org/showthread.php?53358-Simple-merge-of-util-map&quot;&gt;Map Merge&lt;/a&gt;.
@@ -101,19 +101,19 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-property-decorators-cont&quot;&gt;Alfresco: Property Decorators &#8212; cont.&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on April 02, 2012.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-property-decorators-cont&quot;&gt;Alfresco: Property Decorators &#8212; cont.&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on April 02, 2012.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Simple Workflow Web Scripts]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-simple-workflow-web-scripts" />
-  <id>http://localhost:4000/alfresco/alfresco-simple-workflow-web-scripts</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-simple-workflow-web-scripts" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-simple-workflow-web-scripts</id>
   <published>2012-04-01T00:00:00-06:00</published>
   <updated>2012-04-01T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;Continuing on from my previous post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/alfresco-simple-workflow&quot; title=&quot;Alfresco: Simple Workflow&quot;&gt;Simple Workflows&lt;/a&gt; let’s look at using the Simple Workflow model in a few web scripts.&lt;/p&gt;
@@ -171,19 +171,19 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 &lt;p&gt;These web scripts can be &lt;a href=&quot;http://code.google.com/p/alfresco-simple-workflow-webscripts/&quot;&gt;downloaded&lt;/a&gt; from its Google Code Project.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-simple-workflow-web-scripts&quot;&gt;Alfresco: Simple Workflow Web Scripts&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on April 01, 2012.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-simple-workflow-web-scripts&quot;&gt;Alfresco: Simple Workflow Web Scripts&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on April 01, 2012.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Simple Workflow]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-simple-workflow" />
-  <id>http://localhost:4000/alfresco/alfresco-simple-workflow</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-simple-workflow" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-simple-workflow</id>
   <published>2012-03-31T00:00:00-06:00</published>
   <updated>2012-03-31T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;When I worked on the sales side at Alfresco, one of the easiest things to demo was a simple workflow. It was usually something that enabled the prospect to tick off a major requirement on their long list of things that the solution they were looking for needed. Alfresco has two kinds of workflow: simple and for lack of a better word advanced. Advanced workflows usually require some level of business logic, multiple steps, several actors, etc. Advanced workflows are implemented using &lt;a href=&quot;http://www.activiti.org/&quot;&gt;Activiti&lt;/a&gt; (Alfresco 4.0 forward) or JBPM (pre Alfresco 4.0 and maintained for legacy in Alfresco 4.0) Simple workflows provide an accept, a reject, and then the content is either copied or moved to another folder.&lt;/p&gt;
@@ -230,19 +230,19 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 &lt;p&gt;We can also tie simple workflows into more complex actions: dynamically adding simple workflows or scripting more complex actions that allow users to manually take the workflow steps but also allowing programatic lifecycle or state to take simple workflow actions. By jumping out of Explorer or Share and into a custom application you can expose simple workflows from the repository through a web script (an easier task than modifying JSF) and one that I’ve used for several different Alfresco implementations. We will cover that in my next post.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-simple-workflow&quot;&gt;Alfresco: Simple Workflow&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on March 31, 2012.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-simple-workflow&quot;&gt;Alfresco: Simple Workflow&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on March 31, 2012.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Scheduled Jobs]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-scheduled-jobs" />
-  <id>http://localhost:4000/alfresco/alfresco-scheduled-jobs</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-scheduled-jobs" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-scheduled-jobs</id>
   <published>2012-02-21T00:00:00-07:00</published>
   <updated>2012-02-21T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;@tommoz has pointed out to me a blog post that I’d never seen before from @Ixxus which is a &lt;a href=&quot;http://t.co/RAOFy23l&quot;&gt;complete example of writing a scheduled job&lt;/a&gt; (spring beans and all). You should really check out their excellent example if you need a full example of writing scheduled jobs for Alfresco.&lt;/em&gt;&lt;/p&gt;
@@ -280,19 +280,19 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 &lt;p&gt;Hopefully this template will prove usefully to anyone writing a custom scheduled actions.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-scheduled-jobs&quot;&gt;Alfresco: Scheduled Jobs&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on February 21, 2012.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-scheduled-jobs&quot;&gt;Alfresco: Scheduled Jobs&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 21, 2012.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Property Decorators]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-property-decorators" />
-  <id>http://localhost:4000/alfresco/alfresco-property-decorators</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-property-decorators" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-property-decorators</id>
   <published>2012-02-15T00:00:00-07:00</published>
   <updated>2012-02-15T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;After fighting through some upgrade issues with MySQL…and it still not being 100% fixed…I’m finally at a point where I can comfortably write to the DB and bring to you two, thats right two!, new posts in quick succession.  I’m hoping to make this a trend to have two new posts a month (so look for 4 this month as these two should have gone live last month). So without further ado….&lt;/em&gt;&lt;/p&gt;
@@ -402,19 +402,19 @@ It is possible to merge maps of a child bean to a parent bean. Here is how it is
 &lt;p&gt;In conclusion, the Share Document Library Extension Framework is a powerful new tool in the developer toolbox.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-property-decorators&quot;&gt;Alfresco: Property Decorators&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on February 15, 2012.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-property-decorators&quot;&gt;Alfresco: Property Decorators&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 15, 2012.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Share Discussion Notification]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-share-discussion-notification" />
-  <id>http://localhost:4000/alfresco/alfresco-share-discussion-notification</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-share-discussion-notification" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-share-discussion-notification</id>
   <published>2011-06-02T00:00:00-06:00</published>
   <updated>2011-06-02T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;A few months ago in the Alfresco Forums, a user asked about adding email notification to Share Site Discussions.  We went back and forth working out a rough way to accomplish this (some of this in private messages).  And then a couple of weeks ago the question came up internally.  I passed on what we had figured out and told them I would put together a blog post.&lt;/p&gt;
@@ -613,19 +613,19 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 
 &lt;p&gt;Hopefully, I’ve given you some ideas of ways to approach adding discussion notifications.  The key here in discovering how to approach this was knowing where to look at how discussions are stored in the repository.  In fact this is the key for most any extension to Alfresco:  Asking yourself how does this work for this feature, which is similar to what I need, work in Alfresco? Understanding how this is pulled together from looking at the content model, looking at actual content/nodes through the node browser, understanding the relationships between nodes: parent/child and peer and sometimes digging into the source code can help to expand your understanding when looking to extend Alfresco.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-share-discussion-notification&quot;&gt;Alfresco: Share Discussion Notification&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on June 02, 2011.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-share-discussion-notification&quot;&gt;Alfresco: Share Discussion Notification&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on June 02, 2011.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Simple File Diff]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-simple-file-diff" />
-  <id>http://localhost:4000/alfresco/alfresco-simple-file-diff</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-simple-file-diff" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-simple-file-diff</id>
   <published>2010-11-28T00:00:00-07:00</published>
   <updated>2010-11-28T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;I’ve heard asked many times by customers and community members if there was a way to diff files in Alfresco and alas there isn’t an OTB way to do this.  A month ago the discussion came up again internally.  And I thought it might be fun to tackle this as side project just to see if/what was possible.  So I took an evening and hammered out a simple Java class that did a comparison between two text files.  Once I saw that I had at least the basics (annotate the differences between two files) and had gotten the question of basic possibility/difficulty out of the way I moved on to other projects.&lt;/p&gt;
@@ -679,19 +679,19 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 &lt;p&gt;This extension is available as an &lt;a href=&quot;http://alfresco-simple-file-diff.googlecode.com/files/alfresco-filediff-webscript-0.1.amp&quot;&gt;AMP&lt;/a&gt;. The source is available in the &lt;a href=&quot;http://code.google.com/p/alfresco-simple-file-diff/&quot;&gt;Google Code Project&lt;/a&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-simple-file-diff&quot;&gt;Alfresco: Simple File Diff&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on November 28, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-simple-file-diff&quot;&gt;Alfresco: Simple File Diff&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on November 28, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Alfresco PDF Tool Kit &#8211; Insert PDF Action]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-alfresco-pdf-tool-kit-insert-pdf-action" />
-  <id>http://localhost:4000/alfresco/alfresco-alfresco-pdf-tool-kit-insert-pdf-action</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-alfresco-pdf-tool-kit-insert-pdf-action" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-alfresco-pdf-tool-kit-insert-pdf-action</id>
   <published>2010-11-27T00:00:00-07:00</published>
   <updated>2010-11-27T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;I’ve taken a bit of Holiday time to update the Alfresco PDF Toolkit.  &lt;a href=&quot;http://www.unorganizedmachines.com/&quot;&gt;Nate&lt;/a&gt; has been doing an outstanding job adding &lt;a href=&quot;http://www.unorganizedmachines.com/site/software-and-technology/34-software-development/99-watermarking-pdf-documents-with-alfresco&quot;&gt;Watermarking&lt;/a&gt;, &lt;a href=&quot;http://www.unorganizedmachines.com/site/software-and-technology/34-software-development/106-alfresco-pdf-toolkit-digital-signatures&quot;&gt;Digital Signatures&lt;/a&gt;, &lt;a href=&quot;http://www.unorganizedmachines.com/site/software-and-technology/34-software-development/101-encrypting-pdf-documents-with-alfresco&quot;&gt;Encryption&lt;/a&gt; and cleaning up my messy code.  But it was time to add a little bit myself.&lt;/p&gt;
@@ -724,19 +724,19 @@ if (document.parent.hasAspect(&quot;n:notifiable&quot;) {
 &lt;p&gt;The latest &lt;a href=&quot;http://alfresco-pdf-toolkit.googlecode.com/files/alfresco-pdf-toolkit-0.97.amp&quot;&gt;amp&lt;/a&gt; and &lt;a href=&quot;http://code.google.com/p/alfresco-pdf-toolkit/source/checkout&quot;&gt;source&lt;/a&gt; can be found at the &lt;a href=&quot;http://code.google.com/p/alfresco-pdf-toolkit&quot;&gt;Alfresco PDF Toolkit&lt;/a&gt; project site.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-alfresco-pdf-tool-kit-insert-pdf-action&quot;&gt;Alfresco: Alfresco PDF Tool Kit &#8211; Insert PDF Action&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on November 27, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-alfresco-pdf-tool-kit-insert-pdf-action&quot;&gt;Alfresco: Alfresco PDF Tool Kit &#8211; Insert PDF Action&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on November 27, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Default Quota Policy]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-default-quota-policy" />
-  <id>http://localhost:4000/alfresco/alfresco-default-quota-policy</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-default-quota-policy" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-default-quota-policy</id>
   <published>2010-09-15T00:00:00-06:00</published>
   <updated>2010-09-15T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;em&gt;Updated: Added new tested versions&lt;/em&gt;&lt;/p&gt;
@@ -866,19 +866,19 @@ return user; &lt;/pre&gt;
 &lt;p&gt;I’m always looking for feedback: let me know what worked or didn’t for you.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-default-quota-policy&quot;&gt;Alfresco: Default Quota Policy&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on September 15, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-default-quota-policy&quot;&gt;Alfresco: Default Quota Policy&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on September 15, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Permissions Web Scripts]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-permissions-web-scripts" />
-  <id>http://localhost:4000/alfresco/alfresco-permissions-web-scripts</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-permissions-web-scripts" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-permissions-web-scripts</id>
   <published>2010-08-26T00:00:00-06:00</published>
   <updated>2010-08-26T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;A couple of months back I was asked to write a couple of web scripts to help one of our customers to be able to check and modify permissions for content/spaces in the Alfresco repository.  I’ve finally had the chance to spend sometime testing and now writing about them.&lt;/p&gt;
@@ -977,19 +977,19 @@ return user; &lt;/pre&gt;
 &lt;p&gt;In a follow up post, I’ll cover exception handling with JavaScript.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-permissions-web-scripts&quot;&gt;Alfresco: Permissions Web Scripts&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on August 26, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-permissions-web-scripts&quot;&gt;Alfresco: Permissions Web Scripts&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on August 26, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: JMX from the command line]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-jmx-from-the-command-line" />
-  <id>http://localhost:4000/alfresco/alfresco-jmx-from-the-command-line</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-jmx-from-the-command-line" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-jmx-from-the-command-line</id>
   <published>2010-08-03T00:00:00-06:00</published>
   <updated>2010-08-03T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;a href=&quot;http://java.sun.com/javase/6/docs/technotes/guides/jmx/index.html&quot;&gt;JMX&lt;/a&gt; is great. &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt; and &lt;a href=&quot;http://wiki.alfresco.com/wiki/JMX&quot;&gt;JMX&lt;/a&gt; is awesome. I’ve written before about &lt;a href=&quot;http://jared.ottleys.net/alfresco/tunneling-debug-and-jmx-for-alfresco&quot;&gt;configuring Alfresco to use tunneling to connect JMX &amp;amp; debuggers&lt;/a&gt; to servers that don’t allow access to the higher numbered ports (or to only a few ports).  Let’s add another cool tool. (JMX is an Enterprise only feature of Alfresco.)&lt;/p&gt;
@@ -1166,19 +1166,19 @@ null&lt;/code&gt;
 &lt;p&gt;This follow pretty much the same pattern.  The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadOnly&lt;/code&gt; attribute is a read only property, so to change Alfresco into Read Only mode you set the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;. The set will not return any value.  You can then check the current state of the repository by running the previous command and then when you are ready to put the repository back in Read/Write mode change the value of the set command on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.transaction.allow-writes&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-jmx-from-the-command-line&quot;&gt;Alfresco: JMX from the command line&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on August 03, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-jmx-from-the-command-line&quot;&gt;Alfresco: JMX from the command line&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on August 03, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: Max Version Policy]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-max-version-policy" />
-  <id>http://localhost:4000/alfresco/alfresco-max-version-policy</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-max-version-policy" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-max-version-policy</id>
   <published>2010-07-23T00:00:00-06:00</published>
   <updated>2010-07-23T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;em&gt;UPDATE:  Updated code examples to match updates to source code&lt;/em&gt;&lt;/p&gt;
@@ -1337,19 +1337,19 @@ Tested on Alfresco (Enterprise) 3.2 &amp;#8211; 3.3.1
  [13]: http://code.google.com/p/alfresco-maxversion-policy/downloads/detail?name=alfresco-maxversion-policy.amp
 &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-max-version-policy&quot;&gt;Alfresco: Max Version Policy&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on July 23, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-max-version-policy&quot;&gt;Alfresco: Max Version Policy&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on July 23, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[UPDATED: Tunneling Debug and JMX for Alfresco]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/updated-tunneling-debug-and-jmx-for-alfresco" />
-  <id>http://localhost:4000/alfresco/updated-tunneling-debug-and-jmx-for-alfresco</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/updated-tunneling-debug-and-jmx-for-alfresco" />
+  <id>https://jared.ottleys.net/alfresco/updated-tunneling-debug-and-jmx-for-alfresco</id>
   <published>2010-06-11T00:00:00-06:00</published>
   <updated>2010-06-11T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;Back in February I wrote a post on &lt;a href=&quot;http://jared.ottleys.net/alfresco/tunneling-debug-and-jmx-for-alfresco&quot;&gt;Tunneling Debug and JMX with Alfresco&lt;/a&gt;.  Here are a few updates to that post:&lt;/p&gt;
@@ -1461,19 +1461,19 @@ Tested on Alfresco (Enterprise) 3.2 &amp;#8211; 3.3.1
 &lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/updated-tunneling-debug-and-jmx-for-alfresco&quot;&gt;UPDATED: Tunneling Debug and JMX for Alfresco&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on June 11, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/updated-tunneling-debug-and-jmx-for-alfresco&quot;&gt;UPDATED: Tunneling Debug and JMX for Alfresco&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on June 11, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco: SimpleGIS]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-simplegis" />
-  <id>http://localhost:4000/alfresco/alfresco-simplegis</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-simplegis" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-simplegis</id>
   <published>2010-05-31T00:00:00-06:00</published>
   <updated>2010-05-31T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update:&lt;/strong&gt; Share in Alfresco 4.0 now supports google maps integration out of the box.&lt;/em&gt;&lt;/p&gt;
@@ -1650,19 +1650,19 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
  [4]: http://drquyong.com/myblog/?p=49
 &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-simplegis&quot;&gt;Alfresco: SimpleGIS&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on May 31, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-simplegis&quot;&gt;Alfresco: SimpleGIS&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on May 31, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Web Script: Modified Content List]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/web-script-modified-content-list" />
-  <id>http://localhost:4000/alfresco/web-script-modified-content-list</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/web-script-modified-content-list" />
+  <id>https://jared.ottleys.net/alfresco/web-script-modified-content-list</id>
   <published>2010-05-17T00:00:00-06:00</published>
   <updated>2010-05-17T00:00:00-06:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;For a recent customer engagement I was asked to write a web script which they’ve agreed to let me share.&lt;/p&gt;
@@ -1925,19 +1925,19 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 
 &lt;p&gt;If you have suggestions for improvements or questions please feel free to comment here or on the google project.  As always I’m willing to open access to the project to those will to help improve the code.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/web-script-modified-content-list&quot;&gt;Web Script: Modified Content List&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on May 17, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/web-script-modified-content-list&quot;&gt;Web Script: Modified Content List&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on May 17, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Search&#8217;d: How do I enable the Sharepoint Protocol]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/searchd-how-do-i-enable-the-sharepoint-protocol" />
-  <id>http://localhost:4000/alfresco/searchd-how-do-i-enable-the-sharepoint-protocol</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/searchd-how-do-i-enable-the-sharepoint-protocol" />
+  <id>https://jared.ottleys.net/alfresco/searchd-how-do-i-enable-the-sharepoint-protocol</id>
   <published>2010-03-08T00:00:00-07:00</published>
   <updated>2010-03-08T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;&lt;em&gt;This is part of the Search’d series.  Topics are taken from Search Engine keyword searches.&lt;/em&gt;&lt;/p&gt;
@@ -1953,19 +1953,19 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 &lt;p&gt;These documents as well as others for using Share, Web Content Management, Document Management and Records Management can be found in the Content Community Site. You’ll also find presentations from past Community Conferences, Case Studies, White Papers and Webinars.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/searchd-how-do-i-enable-the-sharepoint-protocol&quot;&gt;Search&#8217;d: How do I enable the Sharepoint Protocol&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on March 08, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/searchd-how-do-i-enable-the-sharepoint-protocol&quot;&gt;Search&#8217;d: How do I enable the Sharepoint Protocol&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on March 08, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Search&#8217;d: How do I disable Alfresco Share]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/searchd-how-do-i-disable-alfresco-share" />
-  <id>http://localhost:4000/alfresco/searchd-how-do-i-disable-alfresco-share</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/searchd-how-do-i-disable-alfresco-share" />
+  <id>https://jared.ottleys.net/alfresco/searchd-how-do-i-disable-alfresco-share</id>
   <published>2010-02-26T00:00:00-07:00</published>
   <updated>2010-02-26T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;I’ve always found it fascinating what people searched for to find my blog.  And more fascinating why my blog even came up in the results!  The idea occurred to me that there were actually some meaningful questions in those searches. Yes, it was like one of those Windows 7 epiphanies.  I’m going to start a new weekly (cross your fingers) series based on those search terms. New posts will come every Friday and will incorporate some facet of the search terms that brought people to this blog.  The post size will vary based on the question and the technical depth it may require.  Hopefully, this can prove to be valuable. I’ll also add a pitch here for &lt;a href=&quot;http://www.alfresco.com/services/consulting/&quot;&gt;Alfresco Professional Services&lt;/a&gt; — bread on the table, mouths to feed and all — we offer the in-depth knowledge you need to help with your &lt;a href=&quot;http://www.alfresco.com/services/subscription/&quot;&gt;Alfresco Enterprise Subscription&lt;/a&gt;. So without further ado….I give you: Search’d&lt;/p&gt;
@@ -1985,19 +1985,19 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 &lt;p&gt;**Q: I just removed &lt;strong&gt;_\&lt;em&gt;_.war!  Or I just removed the ___&lt;/em&gt;&lt;/strong&gt; directory! How do I get it back? **For basic out of the box installs, stop Alfresco and simply grab the war file from the &lt;a href=&quot;http://wiki.alfresco.com/wiki/Download_Community_Edition&quot;&gt;Alfresco Community Page&lt;/a&gt; or &lt;a href=&quot;http://network.alfresco.com&quot;&gt;Alfresco Network&lt;/a&gt; (versions must match) and copy it back into the webapps directory.  If you have added extensions via AMPs to your war files, reapply the amps to the new war file. Restart Alfresco.  For the case where you deleted an expanded directory, with the war files in place, restart Alfresco and they will be deployed again.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/searchd-how-do-i-disable-alfresco-share&quot;&gt;Search&#8217;d: How do I disable Alfresco Share&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on February 26, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/searchd-how-do-i-disable-alfresco-share&quot;&gt;Search&#8217;d: How do I disable Alfresco Share&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 26, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco PDF Toolkit]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-pdf-toolkit" />
-  <id>http://localhost:4000/alfresco/alfresco-pdf-toolkit</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-pdf-toolkit" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-pdf-toolkit</id>
   <published>2010-02-25T00:00:00-07:00</published>
   <updated>2010-02-25T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;A few weeks ago I made my first release of what I am calling the &lt;a href=&quot;http://code.google.com/p/alfresco-pdf-toolkit/&quot; target=&quot;_blank&quot;&gt;Alfresco PDF Toolkit&lt;/a&gt; on &lt;a href=&quot;http://code.google.com&quot; target=&quot;_blank&quot;&gt;Google Code&lt;/a&gt;.&lt;/p&gt;
@@ -2036,19 +2036,19 @@ var _latlng${child_index} = new google.maps.LatLng(${child[&quot;latitude&quot;]
 &lt;p&gt;&lt;strong&gt;*Note: **&lt;/strong&gt;This is NOT an officially supported Alfresco Project. *&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-pdf-toolkit&quot;&gt;Alfresco PDF Toolkit&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on February 25, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-pdf-toolkit&quot;&gt;Alfresco PDF Toolkit&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 25, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alfresco WCM Forms: Unique Identifier]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/alfresco/alfresco-wcm-forms-unique-identifier" />
-  <id>http://localhost:4000/alfresco/alfresco-wcm-forms-unique-identifier</id>
+  <link rel="alternate" type="text/html" href="https://jared.ottleys.net/alfresco/alfresco-wcm-forms-unique-identifier" />
+  <id>https://jared.ottleys.net/alfresco/alfresco-wcm-forms-unique-identifier</id>
   <published>2010-02-24T00:00:00-07:00</published>
   <updated>2010-02-24T00:00:00-07:00</updated>
   <author>
     <name>Jared Ottley</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://jared.ottleys.net</uri>
     <email>jared@ottleys.net</email>
   </author>
   <content type="html">&lt;p&gt;From time to time I’ve seen the need to provide a unique identifier in content created through the Alfresco WCM Forms Service.  The reason why has varied from needing an unique identifier across renditions to needing a way to tie the content to User Generated Content (UGC) or some other database managed application. A simple solution is to leverage Java generated [Universally Unique Identifiers][1] (UUID) imported into the [Schema Definition of your form][2] via a [Java Backed Web Script][3]. **Note: **These are not the UUIDs used by Alfresco DM.  UUIDs are not available/part of the AVM/WCM model used by Alfresco.&lt;/p&gt;
@@ -2271,7 +2271,7 @@ targetNamespace=&quot;http://www.alfresco.org/alfresco/sample&quot;&amp;gt; &lt;
  [9]: http://alfresco-uuid-webscript.googlecode.com/files/alfresco-uuid-webscript.amp
 &lt;/p&gt;&lt;/p&gt;&lt;/xs:sequence&gt;&lt;/p&gt;&lt;/xs:complexType&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/alfresco/alfresco-wcm-forms-unique-identifier&quot;&gt;Alfresco WCM Forms: Unique Identifier&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;http://localhost:4000&quot;&gt;I exist as I am&lt;/a&gt; on February 24, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://jared.ottleys.net/alfresco/alfresco-wcm-forms-unique-identifier&quot;&gt;Alfresco WCM Forms: Unique Identifier&lt;/a&gt; was originally published by Jared Ottley at &lt;a href=&quot;https://jared.ottleys.net&quot;&gt;I exist as I am&lt;/a&gt; on February 24, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>
