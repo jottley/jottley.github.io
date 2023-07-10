@@ -1,13 +1,16 @@
 title:            I exist as I am
-tagline:          Do not go where the path may lead, go instead where there is no path and leave a trail. --Ralph Waldo Emerson
-description:      
+tagline:          Do not go where the path may lead, go instead where there is no path and leave a trail.<br/> --Ralph Waldo Emerson
+description: 
+
+#I exist as I am, that is enough, If no other in the world be aware I sit content, And if each and all be aware I sit content. One world is aware, and by the far the largest to me, and that is myself, And whether I come to my own today or in ten thousand or ten million years, I can cheerfully take it now, or with equal cheerfulness, I can wait. ― Walt Whitman
+
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              https://jared.ottleys.net
 
 # Owner/author information
 owner:
   name:           Jared Ottley
-  avatar:         photo.JPG
+  avatar:         Headshot Coach.jpeg
   bio:            "Jared Ottley is an Engineer at <a href='http://www.hyland.com'>Hyland</a> working on the Alfresco Platform.  To wind down he coaches lacrosse Springville High School. He is the proud father of 6."
   email:          jared@ottleys.net
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
@@ -61,5 +64,22 @@ kramdown:
     bold_every: 10
     css: class
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+include:
+  - .htaccess
+  - node_modules/uglifier/index.js
+exclude:
+- .sass-cache/
+- .jekyll-cache/
+- gemfiles/
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/

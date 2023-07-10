@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">I exist as I am</title>
-<subtitle type="text">Do not go where the path may lead, go instead where there is no path and leave a trail. --Ralph Waldo Emerson</subtitle>
+<subtitle type="text">Do not go where the path may lead, go instead where there is no path and leave a trail.<br/> --Ralph Waldo Emerson</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://jared.ottleys.net/feed.xml" />
 <link rel="alternate" type="text/html" href="https://jared.ottleys.net" />
-<updated>2023-07-09T19:21:08-06:00</updated>
+<updated>2023-07-09T22:01:27-06:00</updated>
 <id>https://jared.ottleys.net/</id>
 <author>
   <name>Jared Ottley</name>

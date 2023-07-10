@@ -13,14 +13,14 @@
 <meta name="twitter:image" content="https://jared.ottleys.net/images/KY-Nailing-Machine.jpg">
 
 <meta name="twitter:title" content="Technical Details">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="I exist as I am, that is enough, If no other in the world be aware I sit content, And if each and all be aware I sit content. One world is aware, and by the far the largest to me, and that is myself, And whether I come to my own today or in ten thousand or ten million years, I can cheerfully take it now, or with equal cheerfulness, I can wait. ― Walt Whitman">
 <meta name="twitter:creator" content="@jottley">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Technical Details">
-<meta property="og:description" content="">
+<meta property="og:description" content="I exist as I am, that is enough, If no other in the world be aware I sit content, And if each and all be aware I sit content. One world is aware, and by the far the largest to me, and that is myself, And whether I come to my own today or in ten thousand or ten million years, I can cheerfully take it now, or with equal cheerfulness, I can wait. ― Walt Whitman">
 <meta property="og:url" content="https://jared.ottleys.net/technical-details/index.html">
 <meta property="og:site_name" content="I exist as I am">
 
@@ -38,7 +38,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Webfonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
 <link rel="stylesheet" href="https://jared.ottleys.net/assets/css/main.min.css">
 
@@ -78,6 +78,7 @@
     <header id="top" role="banner">
         <div class="block">
             <h1 class="block-title">I exist as I am</h1>
+            <h4 style="text-align: center;">Do not go where the path may lead, go instead where there is no path and leave a trail.<br/> --Ralph Waldo Emerson</h4>
             <a class="nav-btn" id="nav-open-btn" href="#nav">Navigation</a>
         </div>
     </header>
@@ -106,7 +107,7 @@
 
 <div id="main" role="main"  itemprop="mainContentOfPage">
   <div class="article-author-side">
-    <img src="https://jared.ottleys.net/images/photo.JPG" class="bio-photo" alt="Jared Ottley bio photo"></a>
+    <img src="https://jared.ottleys.net/images/Headshot Coach.jpeg" class="bio-photo" alt="Jared Ottley bio photo"></a>
 <h3>Jared Ottley</h3>
 <p>Jared Ottley is an Engineer at <a href='http://www.hyland.com'>Hyland</a> working on the Alfresco Platform.  To wind down he coaches lacrosse Springville High School. He is the proud father of 6.</p>
 <a href="mailto:jared@ottleys.net" class="author-social"><i class="icon-mail"></i> jared@ottleys.net</a>
@@ -123,34 +124,21 @@
   <article itemscope itemtype="http://schema.org/CreativeWork">
     <h1 itemprop="name">Technical Details</h1>
     <div class="article-wrap" itemprop="text">
-      <p>This page is intended for the tech aficionados and contains specific technical details about the inner workings of this site. I hope to shed some light on some of the special features that this website contains and maybe even help those interested ones implementing similar features in their website. Without further adieu, lets just dive in:</p>
+      This page is intended for the tech aficionados and contains specific technical details about the inner workings of this site. I hope to shed some light on some of the special features that this website contains and maybe even help those interested ones implementing similar features in their website. Without further adieu, lets just dive in:
 
-<ol>
-  <li>This website is built and updated with <strong>Jekyll</strong><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Jekyll is an awesome blog aware static site generator, and its highly useful for us academics. I will tell you why I used the word <strong>Academics</strong>. Back in 2008, when I was a freshman in college, I was provided with a hosting account with a domain name from the University registrar, and I badly wanted to host a blog. You know for swagger. I soon found out that the hosting servers for the students do not allow dynamic codes to run. My initial reaction was <em>NO PHP = NO BLOGGING</em>. Soon I stumbled across some beautiful blogs run on the same servers and some of those would be updated regularly. I came to know about the static site generators and fell in love. With a little bit of research I settled for Jekyll and my blogging experience changed forever.</li>
-  <li><code class="language-plaintext highlighter-rouge">Kramdown</code><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> is the best of the bunch. As this is a Jekyll based website, the contents are written in Markdown. While I used <code class="language-plaintext highlighter-rouge">Rdiscount</code> as my markdown language for a while and absolutely loved it, I soon had to settle for something else as my blogging requirements grew. While <code class="language-plaintext highlighter-rouge">Rdiscount</code> is a lovely piece of software, it has a terrible relation with <code class="language-plaintext highlighter-rouge">MathJax-LaTeX</code><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> and messes up the TeX code when both are put together. As an Electrical Engineering and Mathematics major back then, I had to find an alternative and soon discovered <code class="language-plaintext highlighter-rouge">Kramdown</code>. Its a little different than traditional markdown languages and has a slightly different syntax, but as all other Markdown languages, it too has a steep learning curve and its no hassle to master it within an hour. I have been using it ever since.</li>
-  <li>As for aesthetics, this website features a modified version of the <strong><a href="http://jekyllthemes.org/themes/so-simple/">“So Simple Theme”</a></strong> by <em>Michael Rose</em> from <a href="http://jekyllthemes.org/">http://jekyllthemes.org/</a>. I like this theme because its minimalistic which greatly enhances the reading experience of the viewers. This theme also sports a responsive layout with a drop-down mobile menu which is awesome for reading on mobile devices on the go.</li>
-  <li>One of the major aesthetic changes I brought in the theme is to include a paginator in the home/latest posts page. This makes the website more readable and user-friendly. The navigation menu for the paginator uses an intelligent piece of code.</li>
-  <li>I have also included different category pages for my personal and mathematics related posts. I suppose these two will be the most frequented categories of this website. I will even include more in the future as I see fit.</li>
-  <li>I have been enjoying Medium.com as of lately and I simply love their <strong>Estimated Reading Time (ERT)</strong> of an article feature. What it does, it takes the word count of an article and calculates the <strong>ERT</strong> based on the average reading speed <strong>(ARS)</strong>. While <strong>ARS</strong> is simply an estimation and it differs from person-to-person, Medium uses 180 <strong>Words-Per-Minute (WPM)</strong> as their <strong>ARS</strong>. I figured out that <strong>ARS</strong> in this website’s readers will fall between 210-330 <strong>WPM</strong>. You can find the <strong>ERT</strong> of any article in this blog in the blog meta information panel in the Left-Hand side of the article.</li>
-  <li>This website also utilizes the <strong>“Pluralize”</strong> plugin to generate singular/plural word based on the context explained in point 6. If the reading time is 1 minute, it delivers the singular word “minute”, if else, the plural version “minutes” is delivered.</li>
-  <li>Providing the date in a naked form when the article has been created does not create a personal experience. To solve this the <strong>“Timeago”</strong> plugin has been implemented. It changes the article date and outputs it as a nice personal <em>”- days ago”</em> format.</li>
-</ol>
+1. This website is built and updated with **Jekyll**[^1]. Jekyll is an awesome blog aware static site generator, and its highly useful for us academics. I will tell you why I used the word **Academics**. Back in 2008, when I was a freshman in college, I was provided with a hosting account with a domain name from the University registrar, and I badly wanted to host a blog. You know for swagger. I soon found out that the hosting servers for the students do not allow dynamic codes to run. My initial reaction was *NO PHP = NO BLOGGING*. Soon I stumbled across some beautiful blogs run on the same servers and some of those would be updated regularly. I came to know about the static site generators and fell in love. With a little bit of research I settled for Jekyll and my blogging experience changed forever.
+1. `Kramdown`[^2] is the best of the bunch. As this is a Jekyll based website, the contents are written in Markdown. While I used `Rdiscount` as my markdown language for a while and absolutely loved it, I soon had to settle for something else as my blogging requirements grew. While `Rdiscount` is a lovely piece of software, it has a terrible relation with `MathJax-LaTeX`[^3] and messes up the TeX code when both are put together. As an Electrical Engineering and Mathematics major back then, I had to find an alternative and soon discovered `Kramdown`. Its a little different than traditional markdown languages and has a slightly different syntax, but as all other Markdown languages, it too has a steep learning curve and its no hassle to master it within an hour. I have been using it ever since.
+1. As for aesthetics, this website features a modified version of the **["So Simple Theme"](http://jekyllthemes.org/themes/so-simple/)** by *Michael Rose* from [http://jekyllthemes.org/](http://jekyllthemes.org/). I like this theme because its minimalistic which greatly enhances the reading experience of the viewers. This theme also sports a responsive layout with a drop-down mobile menu which is awesome for reading on mobile devices on the go.
+1. One of the major aesthetic changes I brought in the theme is to include a paginator in the home/latest posts page. This makes the website more readable and user-friendly. The navigation menu for the paginator uses an intelligent piece of code.
+1. I have also included different category pages for my personal and mathematics related posts. I suppose these two will be the most frequented categories of this website. I will even include more in the future as I see fit.
+1. I have been enjoying Medium.com as of lately and I simply love their **Estimated Reading Time (ERT)** of an article feature. What it does, it takes the word count of an article and calculates the **ERT** based on the average reading speed **(ARS)**. While **ARS** is simply an estimation and it differs from person-to-person, Medium uses 180 **Words-Per-Minute (WPM)** as their **ARS**. I figured out that **ARS** in this website's readers will fall between 210-330 **WPM**. You can find the **ERT** of any article in this blog in the blog meta information panel in the Left-Hand side of the article.
+1. This website also utilizes the **"Pluralize"** plugin to generate singular/plural word based on the context explained in point 6. If the reading time is 1 minute, it delivers the singular word "minute", if else, the plural version "minutes" is delivered.
+1. Providing the date in a naked form when the article has been created does not create a personal experience. To solve this the **"Timeago"** plugin has been implemented. It changes the article date and outputs it as a nice personal *"- days ago"* format.
 
-<p><a href="https://jared.ottleys.net" class="btn">Check out my blog</a></p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p><a href="http://jekyllrb.com/">Jekyll</a> transforms plain text into static websites and blogs. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p><a href="https://github.com/gettalong/kramdown">kramdown</a> is yet-another-markdown-parser but fast, pure Ruby, using a strict syntax definition and supporting several common extensions. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p><a href="http://www.mathjax.org/community/mathjax-in-use/mathjax-in-use-instructions-and-how-tos/">http://www.mathjax.org/community/mathjax-in-use/mathjax-in-use-instructions-and-how-tos/</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
+[^1]: [Jekyll](http://jekyllrb.com/) transforms plain text into static websites and blogs.
+[^2]: [kramdown](https://github.com/gettalong/kramdown) is yet-another-markdown-parser but fast, pure Ruby, using a strict syntax definition and supporting several common extensions.
+[^3]: [http://www.mathjax.org/community/mathjax-in-use/mathjax-in-use-instructions-and-how-tos/](http://www.mathjax.org/community/mathjax-in-use/mathjax-in-use-instructions-and-how-tos/)
+<a markdown="0" href="https://jared.ottleys.net" class="btn">Check out my blog</a>
     </div><!-- /.article-wrap -->
   </article>
 </div><!-- /#index -->
