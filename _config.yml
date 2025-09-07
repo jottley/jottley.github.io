@@ -1,85 +1,226 @@
-title:            I exist as I am
-tagline:          Do not go where the path may lead, go instead where there is no path and leave a trail.<br/> --Ralph Waldo Emerson
-description: 
+# The Site Configuration
 
-#I exist as I am, that is enough, If no other in the world be aware I sit content, And if each and all be aware I sit content. One world is aware, and by the far the largest to me, and that is myself, And whether I come to my own today or in ten thousand or ten million years, I can cheerfully take it now, or with equal cheerfulness, I can wait. ― Walt Whitman
+# Import the theme
+theme: jekyll-theme-chirpy
 
-# Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              https://jared.ottleys.net
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+lang: en
 
-# Owner/author information
-owner:
-  name:           Jared Ottley
-  avatar:         Headshot Coach.jpeg
-  bio:            "Jared Ottley is an Engineer at <a href='http://www.hyland.com'>Hyland</a> working on the Alfresco Platform.  To wind down he coaches lacrosse Springville High School. He is the proud father of 6."
-  email:          jared@ottleys.net
-  # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:        jottley
-  facebook:       jottley
-  github:         jottley
-  linkedin:       jottley
-  instagram:      jaredrottley
-  #lastfm:         user/jottley
-  flickr:         jottley
-  # For Google Authorship https://plus.google.com/authorship
-  #google_plus:    https://plus.google.com/u/0/116380333940951424604/posts
+# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
+timezone: America/Denver
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   UA-73397-1
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: Articles
-    url: /articles/
+title: Jared Ottley # the main title
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/Denver
-future:      true
-highlighter: rouge
-markdown:    kramdown
+tagline: Stand still and watch the patterns...If you look at them carefully you might discover miraculous inventions. # it will display as the subtitle
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+description: >- # used by seo meta and the atom feed
+  Alfresco, "Principal Engineer", Fatherhood, Philosophy, Coaching, Lacrosse
+
+# Fill in the protocol & hostname for your site.
+# E.g. 'https://username.github.io', note that it does not end with a '/'.
+url: "https://jared.ottleys.net"
+
+github:
+  username: jottley # change to your GitHub username
+
+#twitter:
+#  username: twitter_username # change to your Twitter username
+
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: Jared Ottley # change to your name
+  email: jared@ottleys.net # change to your email address
+  links:
+    # The first element serves as the copyright owner's link
+    #- https://twitter.com/username # change to your Twitter homepage
+    - https://github.com/jottley # change to your GitHub homepage
+    # Uncomment below to add more social links
+    # - https://www.facebook.com/username
+    - https://www.linkedin.com/in/jottly
+
+# Site Verification Settings
+webmaster_verifications:
+  google: Ln7967omzRKnxbeSTAyCYCPyPTKk-xzUR_OJmQvWXlw # fill in your Google verification code
+  bing: # fill in your Bing verification code
+  alexa: # fill in your Alexa verification code
+  yandex: # fill in your Yandex verification code
+  baidu: # fill in your Baidu verification code
+  facebook: # fill in your Facebook verification code
+
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
+
+# Web Analytics Settings
+analytics:
+  google:
+    id: UA-73397-1 # fill in your Google Analytics ID
+  goatcounter:
+    id: # fill in your GoatCounter ID
+  umami:
+    id: # fill in your Umami ID
+    domain: # fill in your Umami domain
+  matomo:
+    id: # fill in your Matomo ID
+    domain: # fill in your Matomo domain
+  cloudflare:
+    id: # fill in your Cloudflare Web Analytics token
+  fathom:
+    id: # fill in your Fathom Site ID
+
+# Page views settings
+pageviews:
+  provider: # now only supports 'goatcounter'
+
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
+#
+#     light — Use the light color scheme
+#     dark — Use the dark color scheme
+#
+theme_mode: # [light | dark]
+
+# The CDN endpoint for media resources.
+# Notice that once it is assigned, the CDN url
+# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar: assets/img/custom/Headshot Coach.jpeg
+
+# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
+# It can be overridden by a customized `page.image` in front matter.
+social_preview_image: assets/img/custom/Headshot Coach.jpeg # string, local or CORS resources
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  # Global switch for the post-comment system. Keeping it empty means disabled.
+  provider: # [disqus | utterances | giscus]
+  # The provider options are as follows:
+  disqus:
+    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # utterances settings › https://utteranc.es/
+  utterances:
+    repo: # <gh-username>/<repo>
+    issue_term: # < url | pathname | title | ...>
+  # Giscus options › https://giscus.app
+  giscus:
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    strict: # optional, default to '0'
+    input_position: # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: # optional, default to the value of `1`
+
+# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    # specify the Jekyll environment, empty means both
+    # only works if `assets.self_host.enabled` is 'true'
+    env: # [development | production]
+
+pwa:
+  enabled: true # The option for PWA feature (installable)
+  cache:
+    enabled: true # The option for PWA offline cache
+    # Paths defined here will be excluded from the PWA cache.
+    # Usually its value is the `baseurl` of another website that
+    # shares the same domain name as the current website.
+    deny_paths:
+      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
+
+paginate: 10
+
+# The base URL of your site
+baseurl: ""
+
+# ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-  syntax_highlighter_opts:
-    line_numbers:
-    line_numbers_start: 1
-    tab_width: 4
-    bold_every: 10
-    css: class
+collections:
+  tabs:
+    output: true
+    sort_by: order
 
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: "" # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      comments: true # Enable comments in posts.
+      toc: true # Display TOC column in posts.
+      # DO NOT modify the following parameter unless you are confident enough
+      # to update the code of all other post links in this project.
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs # see `site.collections`
+    values:
+      layout: page
+      permalink: /:title/
 
-include:
-  - .htaccess
-  - node_modules/uglifier/index.js
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
 exclude:
-- .sass-cache/
-- .jekyll-cache/
-- gemfiles/
-- Gemfile
-- Gemfile.lock
-- node_modules/
-- vendor/bundle/
-- vendor/cache/
-- vendor/gems/
-- vendor/ruby/
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
