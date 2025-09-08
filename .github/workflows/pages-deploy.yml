@@ -57,10 +57,10 @@ jobs:
           directory: ./_site
           enforce_https: false
           disable_external: true
-          ignore_urls: |
-            - /^http:\/\/127.0.0.1/
-            - /^http:\/\/0.0.0.0/
-            - /^http:\/\/localhost/
+          ignore_url: |
+            /^http:\/\/127.0.0.1/
+            /^http:\/\/0.0.0.0/
+            /^http:\/\/localhost/
         #run: |
         #  set -e
         #  bundle exec htmlproofer _site \
